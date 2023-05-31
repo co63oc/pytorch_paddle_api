@@ -1,5 +1,7 @@
 <?php
 define("ROOT", dirname(__FILE__));
+define("PADDLE_DOC", '/data/docs/');
+define("NEW_DOC_DIR", '0601/');
 
 global $pytorch_data;
 global $paddle_data;
@@ -175,7 +177,7 @@ foreach ($api_paddle_list as $item) {
         $rst_file = "docs/api/{api_dir}_cn.rst";
 		$url2 = str_replace("{api_dir}", $api_dir, $format1);
 		$rst_file2 = str_replace("{api_dir}", $api_dir, $rst_file);
-		if (!file_exists($rst_file2)) {
+		if (!file_exists(PADDLE_DOC . $rst_file2)) {
             $url2 = "";
             echo $i . "  ";
 			echo $paddle_api . " not exists\n";
@@ -186,9 +188,12 @@ foreach ($api_paddle_list as $item) {
 }
 // print_r($paddle_data);
 
+global $exist_list;
+$exist_list = [];
 function show_group($group_id) {
 	global $pytorch_data;
 	global $paddle_data;
+	global $exist_list;
 	$api_tpl = file_get_contents(ROOT . "/api.tpl");
 
 	$start = $group_id * 10 - 9;
@@ -214,13 +219,29 @@ function show_group($group_id) {
 			$c = str_replace("{" . $k1 . "}", $v1, $c);
 		}
 		$new_doc = $pytorch_data[$i]['new_doc'];
-		//if (!file_exists($new_doc)) {
-			file_put_contents($new_doc, $c);
-		//}
+		if (!file_exists(PADDLE_DOC . $new_doc)) {
+			$new_file = NEW_DOC_DIR . $new_doc;
+			$new_dir = dirname($new_file);
+			if (!file_exists($new_dir)) {
+				mkdir($new_dir, 0777, true);
+			}
+			file_put_contents($new_file, $c);
+		} else {
+            $exist_list[] = $pytorch_data[$i]['api'];
+			// echo $new_doc . " exists\n";
+		}
 	}
 }
-show_group(62);
-show_group(63);
+show_group(64);
+show_group(65);
+show_group(69);
+show_group(71);
+show_group(73);
+show_group(74);
+show_group(75);
+show_group(76);
+show_group(77);
+show_group(78);
 
 // index.md
 $str = <<<EOF
@@ -238,3 +259,6 @@ foreach ($pytorch_data as $i => $v) {
 }
 
 // file_put_contents("/tmp/index.md", $str);
+echo "\nexists:\n";
+print(implode("\n", $exist_list));
+echo "\n";
