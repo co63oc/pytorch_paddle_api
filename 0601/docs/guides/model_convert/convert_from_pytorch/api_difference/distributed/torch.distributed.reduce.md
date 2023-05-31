@@ -1,34 +1,25 @@
-## [xxx 参数更多]torch.distributed.reduce
+## [torch 参数更多]torch.distributed.reduce
 
 ### [torch.distributed.reduce](https://pytorch.org/docs/1.13/distributed.html#torch.distributed.reduce)
 
 ```python
-torch.distributed.reduce(xxx)
+torch.distributed.reduce(tensor, dst, op=<torch.distributed.distributed_c10d.ReduceOp object>, group=None, async_op=False)
 ```
 
 ### [paddle.distributed.reduce](https://www.paddlepaddle.org.cn/documentation/docs/zh/api/paddle/distributed/reduce_cn.html)
 
 ```python
-paddle.distributed.reduce(xxx)
+paddle.distributed.reduce(tensor, dst, op=ReduceOp.SUM, group=0)
 ```
 
-其中 xxx 相比 xxx 支持更多其他参数，具体如下：
+其中 PyTorch 相比 Paddle 支持更多其他参数，具体如下：
 
 ### 参数映射
 
-| PyTorch | PaddlePaddle | 备注 |
-| ------- | ------------ | ---- |
-|    -    |    xxx    | 表示xxx，PyTorch 无此参数，Paddle 保持默认即可。 |
-
-### 转写示例
-
-#### xxx 参数：xxx
-``` python
-# PyTorch 写法:
-xxx
-
-# Paddle 写法:
-xxx
-
-# 注：xxx
-```
+| PyTorch  | PaddlePaddle | 备注                                          |
+| -------- | ------------ | --------------------------------------------- |
+| tensor   | tensor       | 操作的输入 Tensor。                           |
+| dst      | dst          | 返回操作结果的目标进程编号。                  |
+| op       | op           | 归约的具体操作。                              |
+| group    | group        | 工作的进程组编号。                            |
+| async_op | -            | 是否异步操作，Paddle 无此参数，暂无转写方式。 |
