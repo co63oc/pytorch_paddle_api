@@ -1,34 +1,22 @@
-## [xxx 参数更多]torch.distributions.dirichlet.Dirichlet
+## [torch 参数更多]torch.distributions.dirichlet.Dirichlet
 
 ### [torch.distributions.dirichlet.Dirichlet](https://pytorch.org/docs/1.13/distributions.html#torch.distributions.dirichlet.Dirichlet)
 
 ```python
-torch.distributions.dirichlet.Dirichlet(xxx)
+torch.distributions.dirichlet.Dirichlet(concentration, validate_args=None)
 ```
 
 ### [paddle.distribution.Dirichlet](https://www.paddlepaddle.org.cn/documentation/docs/zh/api/paddle/distribution/Dirichlet_cn.html)
 
 ```python
-paddle.distribution.Dirichlet(xxx)
+paddle.distribution.Dirichlet(concentration)
 ```
 
-其中 xxx 相比 xxx 支持更多其他参数，具体如下：
+其中 PyTorch 相比 Paddle 支持更多其他参数，具体如下：
 
 ### 参数映射
 
-| PyTorch | PaddlePaddle | 备注 |
-| ------- | ------------ | ---- |
-|    -    |    xxx    | 表示xxx，PyTorch 无此参数，Paddle 保持默认即可。 |
-
-### 转写示例
-
-#### xxx 参数：xxx
-``` python
-# PyTorch 写法:
-xxx
-
-# Paddle 写法:
-xxx
-
-# 注：xxx
-```
+| PyTorch       | PaddlePaddle  | 备注                                          |
+| ------------- | ------------- | --------------------------------------------- |
+| concentration | concentration | 浓度参数，即公式中 α 参数。                   |
+| validate_args | -             | 有效参数列表，Paddle 无此参数，暂无转写方式。 |

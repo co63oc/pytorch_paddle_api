@@ -1,34 +1,23 @@
-## [xxx 参数更多]torch.distributions.exp_family.ExponentialFamily
+## [torch 参数更多]torch.distributions.exp_family.ExponentialFamily
 
 ### [torch.distributions.exp_family.ExponentialFamily](https://pytorch.org/docs/1.13/distributions.html#torch.distributions.exp_family.ExponentialFamily)
 
 ```python
-torch.distributions.exp_family.ExponentialFamily(xxx)
+torch.distributions.exp_family.ExponentialFamily(batch_shape=torch.Size([]), event_shape=torch.Size([]), validate_args=None)
 ```
 
 ### [paddle.distribution.ExponentialFamily](https://www.paddlepaddle.org.cn/documentation/docs/zh/api/paddle/distribution/ExponentialFamily_cn.html)
 
 ```python
-paddle.distribution.ExponentialFamily(xxx)
+paddle.distribution.ExponentialFamily(batch_shape， event_shape)
 ```
 
-其中 xxx 相比 xxx 支持更多其他参数，具体如下：
+其中 PyTorch 相比 Paddle 支持更多其他参数，具体如下：
 
 ### 参数映射
 
-| PyTorch | PaddlePaddle | 备注 |
-| ------- | ------------ | ---- |
-|    -    |    xxx    | 表示xxx，PyTorch 无此参数，Paddle 保持默认即可。 |
-
-### 转写示例
-
-#### xxx 参数：xxx
-``` python
-# PyTorch 写法:
-xxx
-
-# Paddle 写法:
-xxx
-
-# 注：xxx
-```
+| PyTorch       | PaddlePaddle  | 备注                                          |
+| ------------- | ------------- | --------------------------------------------- |
+| batch_shape   | batch_shape， | 概率分布参数批量形状。                        |
+| event_shape   | event_shape   | 多元概率分布维数形状。                        |
+| validate_args | -             | 有效参数列表，Paddle 无此参数，暂无转写方式。 |

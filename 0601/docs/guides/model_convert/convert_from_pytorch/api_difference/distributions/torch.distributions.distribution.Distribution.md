@@ -1,34 +1,23 @@
-## [xxx 参数更多]torch.distributions.distribution.Distribution
+## [torch 参数更多]torch.distributions.distribution.Distribution
 
 ### [torch.distributions.distribution.Distribution](https://pytorch.org/docs/1.13/distributions.html#torch.distributions.distribution.Distribution)
 
 ```python
-torch.distributions.distribution.Distribution(xxx)
+torch.distributions.distribution.Distribution(batch_shape=torch.Size([]), event_shape=torch.Size([]), validate_args=None)
 ```
 
 ### [paddle.distribution.Distribution](https://www.paddlepaddle.org.cn/documentation/docs/zh/api/paddle/distribution/Distribution_cn.html)
 
 ```python
-paddle.distribution.Distribution(xxx)
+paddle.distribution.Distribution(batch_shape， event_shape)
 ```
 
-其中 xxx 相比 xxx 支持更多其他参数，具体如下：
+其中 PyTorch 相比 Paddle 支持更多其他参数，具体如下：
 
 ### 参数映射
 
-| PyTorch | PaddlePaddle | 备注 |
-| ------- | ------------ | ---- |
-|    -    |    xxx    | 表示xxx，PyTorch 无此参数，Paddle 保持默认即可。 |
-
-### 转写示例
-
-#### xxx 参数：xxx
-``` python
-# PyTorch 写法:
-xxx
-
-# Paddle 写法:
-xxx
-
-# 注：xxx
-```
+| PyTorch       | PaddlePaddle | 备注                                          |
+| ------------- | ------------ | --------------------------------------------- |
+| batch_shape   | batch_shape  | 概率分布参数批量形状。                        |
+| event_shape   | event_shape  | 多元概率分布维数形状。                        |
+| validate_args | -            | 有效参数列表，Paddle 无此参数，暂无转写方式。 |
