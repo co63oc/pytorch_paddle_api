@@ -259,6 +259,7 @@ foreach ($pytorch_data as $i => $v) {
 }
 
 // file_put_contents("/tmp/index.md", $str);
-echo "\nexists:\n";
-print(implode("\n", $exist_list));
-echo "\n";
+// echo "\nexists:\n";
+$str = implode("\n", $exist_list);
+file_put_contents("exist.md", $str);
+// echo "\n";
