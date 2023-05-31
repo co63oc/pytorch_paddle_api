@@ -42,6 +42,7 @@ foreach ($api_list as $api) {
 	$url_map1 = [
 		"torch.nn.functional" => "https://pytorch.org/docs/1.13/generated/{api}.html#{api}",
 		"torch.Tensor" => "https://pytorch.org/docs/1.13/generated/{api}.html#{api}",
+		"torch.cuda.amp" => "https://pytorch.org/docs/1.13/amp.html#{api}",
 		"torch.cuda" => "https://pytorch.org/docs/1.13/generated/{api}.html#{api}",
 		"torch.backends" => "https://pytorch.org/docs/1.13/backends.html#{api}",
 		"torch.distributed" => "https://pytorch.org/docs/1.13/distributed.html#{api}",
@@ -213,9 +214,9 @@ function show_group($group_id) {
 			$c = str_replace("{" . $k1 . "}", $v1, $c);
 		}
 		$new_doc = $pytorch_data[$i]['new_doc'];
-		if (!file_exists($new_doc)) {
+		//if (!file_exists($new_doc)) {
 			file_put_contents($new_doc, $c);
-		}
+		//}
 	}
 }
 show_group(62);
@@ -236,4 +237,4 @@ foreach ($pytorch_data as $i => $v) {
 			);
 }
 
-file_put_contents("/tmp/index.md", $str);
+// file_put_contents("/tmp/index.md", $str);
