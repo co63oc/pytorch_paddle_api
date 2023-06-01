@@ -1,34 +1,34 @@
-## [xxx 参数更多]torch.special.digamma
+## [torch 参数更多]torch.special.digamma
 
 ### [torch.special.digamma](https://pytorch.org/docs/1.13/special.html#torch.special.digamma)
 
 ```python
-torch.special.digamma(xxx)
+torch.special.digamma(input, *, out=None)
 ```
 
 ### [paddle.digamma](https://www.paddlepaddle.org.cn/documentation/docs/zh/api/paddle/digamma_cn.html)
 
 ```python
-paddle.digamma(xxx)
+paddle.digamma(x, name=None)
 ```
 
-其中 xxx 相比 xxx 支持更多其他参数，具体如下：
+其中 PyTorch 相比 Paddle 支持更多其他参数，具体如下：
 
 ### 参数映射
 
-| PyTorch | PaddlePaddle | 备注 |
-| ------- | ------------ | ---- |
-|    -    |    xxx    | 表示xxx，PyTorch 无此参数，Paddle 保持默认即可。 |
+| PyTorch | PaddlePaddle | 备注                                               |
+| ------- | ------------ | -------------------------------------------------- |
+| input   | x            | 输入的 Tensor，仅参数名不一致。                    |
+| out     | -            | 表示输出的 Tensor，Paddle 无此参数，需要进行转写。 |
 
 ### 转写示例
 
-#### xxx 参数：xxx
-``` python
+#### out 参数：输出的 Tensor
+
+```python
 # PyTorch 写法:
-xxx
+torch.special.digamma(x, out=y)
 
 # Paddle 写法:
-xxx
-
-# 注：xxx
+paddle.assign(paddle.digamma(x), y)
 ```
