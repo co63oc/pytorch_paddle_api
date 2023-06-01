@@ -3,7 +3,7 @@
 ### [torch.special.round](https://pytorch.org/docs/1.13/special.html#torch.special.round)
 
 ```python
-torch.special.round(input, *, out=None) 
+torch.special.round(input, *, out=None)
 ```
 
 ### [paddle.round](https://www.paddlepaddle.org.cn/documentation/docs/zh/api/paddle/round_cn.html)
