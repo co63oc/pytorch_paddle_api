@@ -1,34 +1,34 @@
-## [xxx 参数更多]torch.linalg.inv
+## [torch 参数更多]torch.linalg.inv
 
 ### [torch.linalg.inv](https://pytorch.org/docs/1.13/generated/torch.linalg.inv.html#torch.linalg.inv)
 
 ```python
-torch.linalg.inv(xxx)
+torch.linalg.inv(A, *, out=None)
 ```
 
 ### [paddle.linalg.inv](https://www.paddlepaddle.org.cn/documentation/docs/zh/api/paddle/linalg/inv_cn.html)
 
 ```python
-paddle.linalg.inv(xxx)
+paddle.linalg.inv(x, name=None)
 ```
 
-其中 xxx 相比 xxx 支持更多其他参数，具体如下：
+其中 PyTorch 相比 Paddle 支持更多其他参数，具体如下：
 
 ### 参数映射
 
 | PyTorch | PaddlePaddle | 备注 |
-| ------- | ------------ | ---- |
-|    -    |    xxx    | 表示xxx，PyTorch 无此参数，Paddle 保持默认即可。 |
+| ------- | ------------ | ---------------------------------------------------- |
+| A       | x            | 输入 Tensor，仅参数名不一致。                        |
+| out     | -            | 表示输出的 Tensor ， Paddle 无此参数，需要进行转写。 |
 
 ### 转写示例
 
-#### xxx 参数：xxx
-``` python
+#### out 参数：输出的 Tensor
+
+```python
 # PyTorch 写法:
-xxx
+torch.linalg.inv(x, out=y)
 
 # Paddle 写法:
-xxx
-
-# 注：xxx
+paddle.assign(paddle.linalg.inv(x), y)
 ```

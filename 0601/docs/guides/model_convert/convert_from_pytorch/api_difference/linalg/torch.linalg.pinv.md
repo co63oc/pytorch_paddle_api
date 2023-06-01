@@ -1,34 +1,37 @@
-## [xxx 参数更多]torch.linalg.pinv
+## [torch 参数更多]torch.linalg.pinv
 
 ### [torch.linalg.pinv](https://pytorch.org/docs/1.13/generated/torch.linalg.pinv.html#torch.linalg.pinv)
 
 ```python
-torch.linalg.pinv(xxx)
+torch.linalg.pinv(A, *, atol=None, rtol=None, hermitian=False, out=None)
 ```
 
 ### [paddle.linalg.pinv](https://www.paddlepaddle.org.cn/documentation/docs/zh/api/paddle/linalg/pinv_cn.html)
 
 ```python
-paddle.linalg.pinv(xxx)
+paddle.linalg.pinv(x, rcond=1e-15, hermitian=False, name=None)
 ```
 
-其中 xxx 相比 xxx 支持更多其他参数，具体如下：
+其中 PyTorch 相比 Paddle 支持更多其他参数，具体如下：
 
 ### 参数映射
 
-| PyTorch | PaddlePaddle | 备注 |
-| ------- | ------------ | ---- |
-|    -    |    xxx    | 表示xxx，PyTorch 无此参数，Paddle 保持默认即可。 |
+| PyTorch   | PaddlePaddle | 备注                                               |
+| --------- | ------------ | -------------------------------------------------- |
+| A         | x            | 输入 Tensor，仅参数名不一致。                      |
+| atol      | -            | 绝对阈值，Paddle 无此参数，暂无转写方式。          |
+| rtol      | rcond        | 奇异值（特征值）被截断的阈值，仅参数名不一致。     |
+| hermitian | hermitian    | 是否为 hermitian 矩阵或者实对称矩阵。              |
+| out       | -            | 表示输出的 Tensor，Paddle 无此参数，需要进行转写。 |
 
 ### 转写示例
 
-#### xxx 参数：xxx
-``` python
+#### out 参数：输出的 Tensor
+
+```python
 # PyTorch 写法:
-xxx
+torch.linalg.pinv(x, out=y)
 
 # Paddle 写法:
-xxx
-
-# 注：xxx
+paddle.assign(paddle.linalg.pinv(x), y)
 ```

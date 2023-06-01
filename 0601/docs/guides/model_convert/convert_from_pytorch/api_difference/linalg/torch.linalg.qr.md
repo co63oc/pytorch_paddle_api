@@ -1,34 +1,35 @@
-## [xxx 参数更多]torch.linalg.qr
+## [torch 参数更多]torch.linalg.qr
 
 ### [torch.linalg.qr](https://pytorch.org/docs/1.13/generated/torch.linalg.qr.html#torch.linalg.qr)
 
 ```python
-torch.linalg.qr(xxx)
+torch.linalg.qr(A, mode='reduced', *, out=None)
 ```
 
 ### [paddle.linalg.qr](https://www.paddlepaddle.org.cn/documentation/docs/zh/api/paddle/linalg/qr_cn.html)
 
 ```python
-paddle.linalg.qr(xxx)
+paddle.linalg.qr(x, mode='reduced', name=None)
 ```
 
-其中 xxx 相比 xxx 支持更多其他参数，具体如下：
+其中 PyTorch 相比 Paddle 支持更多其他参数，具体如下：
 
 ### 参数映射
 
-| PyTorch | PaddlePaddle | 备注 |
-| ------- | ------------ | ---- |
-|    -    |    xxx    | 表示xxx，PyTorch 无此参数，Paddle 保持默认即可。 |
+| PyTorch | PaddlePaddle | 备注                                               |
+| ------- | ------------ | -------------------------------------------------- |
+| A       | x            | 输入 Tensor，仅参数名不一致。                      |
+| mode    | mode         | 控制正交三角分解的行为。                           |
+| out     | -            | 表示输出的 Tensor，Paddle 无此参数，需要进行转写。 |
 
 ### 转写示例
 
-#### xxx 参数：xxx
-``` python
+#### out 参数：输出的 Tensor
+
+```python
 # PyTorch 写法:
-xxx
+torch.linalg.qr(x, out=y)
 
 # Paddle 写法:
-xxx
-
-# 注：xxx
+paddle.assign(paddle.linalg.qr(x), y)
 ```
