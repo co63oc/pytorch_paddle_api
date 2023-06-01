@@ -1,7 +1,7 @@
 <?php
 define("ROOT", dirname(__FILE__));
 define("PADDLE_DOC", '/data/docs/');
-define("NEW_DOC_DIR", '0601/');
+define("NEW_DOC_DIR", '0601_2/');
 
 global $pytorch_data;
 global $paddle_data;
@@ -200,7 +200,7 @@ function show_group($group_id) {
 	$end = $group_id * 10;
 	echo "\n";
 	for ($i = $start; $i <= $end; $i++) {
-		if (empty($pytorch_data[$i])) {
+		if (empty($paddle_data[$i])) {
 			continue;
 		}
 		$replace_list = [];
@@ -232,16 +232,11 @@ function show_group($group_id) {
 		}
 	}
 }
-show_group(64);
-show_group(65);
-show_group(69);
-show_group(71);
-show_group(73);
-show_group(74);
-show_group(75);
-show_group(76);
-show_group(77);
-show_group(78);
+$list1 = [64, 65, 69, 71, 73, 74, 75, 76, 77, 78];
+$list1 = [80, 81, 82, 83, 84, 85];
+foreach ($list1 as $v) {
+	show_group($v);
+}
 
 // index.md
 $str = <<<EOF
