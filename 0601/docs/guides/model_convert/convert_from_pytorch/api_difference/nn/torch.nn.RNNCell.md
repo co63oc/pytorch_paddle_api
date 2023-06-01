@@ -23,8 +23,8 @@ paddle.nn.SimpleRNNCell(input_size, hidden_size, activation='tanh', weight_ih_at
 | hidden_size         | hidden_size    | 隐藏状态大小。                                                  |
 | bias                | -              | 是否使用 blas 层权重，Paddle 无此参数，暂无转写方式。           |
 | nonlinearity        | activation     | 简单循环神经网络单元的激活函数，仅参数名不一致。                |
-| device              | -              | 表示 Tensor 存放设备位置，Paddle 无此参数。需要进行转写。       |
-| dtype               | -              | 参数类型，Paddle 无此参数。需要进行转写。                       |
+| device              | -              | 表示 Tensor 存放设备位置，Paddle 无此参数，需要进行转写。       |
+| dtype               | -              | 参数类型，Paddle 无此参数，需要进行转写。                       |
 | -                   | weight_ih_attr | weight_ih 的参数，PyTorch 无此参数，Paddle 保持默认即可。       |
 | -                   | weight_hh_attr | weight_hh 的参数，PyTorch 无此参数，Paddle 保持默认即可。       |
 | -                   | bias_ih_attr   | bias_ih 的参数，PyTorch 无此参数，Paddle 保持默认即可。         |
