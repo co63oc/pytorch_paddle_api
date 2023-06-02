@@ -1,7 +1,8 @@
 <?php
 define("ROOT", dirname(__FILE__));
 define("PADDLE_DOC", '/data/docs/');
-define("NEW_DOC_DIR", '0601_2/');
+define("NEW_DOC_DIR", '0602/');
+define("EXIST", 'exist_0602.md');
 
 global $pytorch_data;
 global $paddle_data;
@@ -234,6 +235,7 @@ function show_group($group_id) {
 }
 $list1 = [64, 65, 69, 71, 73, 74, 75, 76, 77, 78];
 $list1 = [80, 81, 82, 83, 84, 85];
+$list1 = [51, 52, 53, 55, 56, 58, 60];
 foreach ($list1 as $v) {
 	show_group($v);
 }
@@ -256,5 +258,5 @@ foreach ($pytorch_data as $i => $v) {
 // file_put_contents("/tmp/index.md", $str);
 // echo "\nexists:\n";
 $str = implode("\n", $exist_list);
-file_put_contents("exist.md", $str);
+file_put_contents(EXIST, $str);
 // echo "\n";
