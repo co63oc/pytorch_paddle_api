@@ -19,4 +19,4 @@ paddle.Tensor.astype(dtype)
 | PyTorch      | PaddlePaddle | 备注                                                         |
 | ------------ | ------------ | ------------------------------------------------------------ |
 | dtype        | dtype        | 转换后的 dtype。                                             |
-| non_blocking | -            | 控制 cpu 和 gpu 数据的异步复制，Paddle 无此参数，一般对网络训练结果影响不大，可直接删除。 |
+| non_blocking | -            | 控制 cpu 和 gpu 数据的异步复制，Paddle 暂无转写方式。 |

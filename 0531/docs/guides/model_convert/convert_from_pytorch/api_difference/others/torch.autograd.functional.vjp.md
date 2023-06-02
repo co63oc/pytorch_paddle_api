@@ -16,10 +16,10 @@ paddle.incubate.autograd.vjp(func, xs, v=None)
 
 ### 参数映射
 
-| PyTorch      | PaddlePaddle | 备注                                                         |
-| ------------ | ------------ | ------------------------------------------------------------ |
-| func         | func         | Python 函数。                                                |
-| inputs       | xs           | 函数 func 的输入参数。                                       |
-| v            | v            | 用于计算 vjp 的输入向量。                                    |
-| create_graph | -            | 是否创建图，Paddle 无此参数，一般对网络训练结果影响不大，可直接删除。 |
-| strict       | -            | 是否在存在一个与所有输出无关的输入时抛出错误，Paddle 无此参数，一般对网络训练结果影响不大，可直接删除。 |
+| PyTorch      | PaddlePaddle | 备注                                                                |
+| ------------ | ------------ | ------------------------------------------------------------------- |
+| func         | func         | Python 函数。                                                       |
+| inputs       | xs           | 函数 func 的输入参数。                                              |
+| v            | v            | 用于计算 vjp 的输入向量。                                           |
+| create_graph | -            | 是否创建图，Paddle 暂无转写方式。                                   |
+| strict       | -            | 是否在存在一个与所有输出无关的输入时抛出错误，Paddle 暂无转写方式。 |

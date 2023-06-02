@@ -16,12 +16,12 @@ paddle.incubate.autograd.Hessian(func, xs, is_batched=False)
 
 ### 参数映射
 
-| PyTorch                 | PaddlePaddle | 备注                                                         |
-| ----------------------- | ------------ | ------------------------------------------------------------ |
-| func                    | func         | Python 函数。                                                |
-| inputs                  | xs           | 函数 func 的输入参数。                                       |
-| create_graph            | -            | 是否创建图，Paddle 无此参数，一般对网络训练结果影响不大，可直接删除。 |
-| strict                  | -            | 是否在存在一个与所有输出无关的输入时抛出错误，Paddle 无此参数，一般对网络训练结果影响不大，可直接删除。 |
-| vectorize               | -            | 体验中功能，Paddle 无此参数，一般对网络训练结果影响不大，可直接删除。 |
-| outer_jacobian_strategy | -            | AD 计算模式，Paddle 无此参数，一般对网络训练结果影响不大，可直接删除。 |
-| -                       | is_batched   | 表示包含 batch 维，PyTorch 无此参数，Paddle 保持默认即可。             |
+| PyTorch                 | PaddlePaddle | 备注                                                                |
+| ----------------------- | ------------ | ------------------------------------------------------------------- |
+| func                    | func         | Python 函数。                                                       |
+| inputs                  | xs           | 函数 func 的输入参数。                                              |
+| create_graph            | -            | 是否创建图，Paddle 暂无转写方式。                                   |
+| strict                  | -            | 是否在存在一个与所有输出无关的输入时抛出错误，Paddle 暂无转写方式。 |
+| vectorize               | -            | 体验中功能，Paddle 暂无转写方式。                                   |
+| outer_jacobian_strategy | -            | AD 计算模式，Paddle 暂无转写方式。                                  |
+| -                       | is_batched   | 表示包含 batch 维，PyTorch 无此参数，Paddle 保持默认即可。          |

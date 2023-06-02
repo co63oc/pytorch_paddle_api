@@ -26,10 +26,10 @@ paddle.Tensor.subtract_(y, name=None)
 #### alpha：表示`other`的乘数
 ```python
 # Pytorch 写法
-x.subtract(y, alpha=2)
+x.subtract_(y, alpha=2)
 
 # Paddle 写法
-x.subtract(2 * y)
+x.subtract_(2 * y)
 
 # 注：Paddle 直接将 alpha 与 y 相乘实现
 ```

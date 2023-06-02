@@ -16,11 +16,11 @@ paddle.autograd.backward(tensors, grad_tensors=None, retain_graph=False)
 
 ### 参数映射
 
-| PyTorch        | PaddlePaddle | 备注                                                         |
-| -------------- | ------------ | ------------------------------------------------------------ |
-| tensors        | tensors      | 将要计算梯度的 Tensors 列表。                                |
-| grad_tensors   | grad_tensors | tensors 的初始梯度值。                                       |
-| retain_graph   | retain_graph | 如果为 False，反向计算图将被释放。                           |
-| create_graph   | -            | 是否创建图，Paddle 无此参数，一般对网络训练结果影响不大，可直接删除。 |
-| grad_variables | -            | 创建图关联变量，Paddle 无此参数，一般对网络训练结果影响不大，可直接删除。 |
-| inputs         | -            | 将累积的梯度，Paddle 无此参数，一般对网络训练结果影响不大，可直接删除。 |
+| PyTorch        | PaddlePaddle | 备注                                  |
+| -------------- | ------------ | ------------------------------------- |
+| tensors        | tensors      | 将要计算梯度的 Tensors 列表。         |
+| grad_tensors   | grad_tensors | tensors 的初始梯度值。                |
+| retain_graph   | retain_graph | 如果为 False，反向计算图将被释放。    |
+| create_graph   | -            | 是否创建图，Paddle 暂无转写方式。     |
+| grad_variables | -            | 创建图关联变量，Paddle 暂无转写方式。 |
+| inputs         | -            | 将累积的梯度，Paddle 暂无转写方式。   |

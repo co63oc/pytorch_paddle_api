@@ -18,7 +18,30 @@ paddle.Tensor.triangular_solve(b, upper=True, transpose=False, unitriangular=Fal
 
 | PyTorch       | PaddlePaddle  | 备注                                                        |
 | ------------- | ------------- | ----------------------------------------------------------- |
-| A             | b             | 线性方程组右边的矩阵，仅参数名不一致。                      |
+| A             | -             | 线性方程组系数矩阵，Paddle 需要进行转写。                   |
+| -             | b             | 线性方程组右边的矩阵，Paddle 需要进行转写。                 |
 | upper         | upper         | 对系数矩阵 x 取上三角还是下三角。                           |
 | transpose     | transpose     | 是否对系数矩阵 x 进行转置。                                 |
 | unitriangular | unitriangular | 如果为 True，则将系数矩阵 x 对角线元素假设为 1 来求解方程。 |
+
+### 转写示例
+
+#### A：线性方程组系数矩阵
+
+```python
+# Pytorch 写法
+A = torch.tensor([[1, 1, 1],
+                  [0, 2, 1],
+                  [0, 0,-1]], dtype=torch.float64)
+b = torch.tensor([[0], [-9], [5]], dtype=torch.float64)
+b.triangular_solve(A)
+
+# Paddle 写法
+A = paddle.to_tensor([[1, 1, 1],
+                      [0, 2, 1],
+                      [0, 0,-1]], dtype=paddle.float64)
+b = paddle.to_tensor([[0], [-9], [5]], dtype=paddle.float64)
+A.triangular_solve(b)
+
+# 注：Paddle 将 A 与 b 交换
+```
