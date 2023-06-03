@@ -1,34 +1,51 @@
-## [xxx 参数更多]torch.nn.Bilinear
+## [torch 参数更多]torch.nn.Bilinear
 
 ### [torch.nn.Bilinear](https://pytorch.org/docs/1.13/generated/torch.nn.Bilinear.html#torch.nn.Bilinear)
 
 ```python
-torch.nn.Bilinear(xxx)
+torch.nn.Bilinear(in1_features, in2_features, out_features, bias=True, device=None, dtype=None)
 ```
 
 ### [paddle.nn.Bilinear](https://www.paddlepaddle.org.cn/documentation/docs/zh/api/paddle/nn/Bilinear_cn.html)
 
 ```python
-paddle.nn.Bilinear(xxx)
+paddle.nn.Bilinear(in1_features, in2_features, out_features, weight_attr=None, bias_attr=None, name=None)
 ```
 
-其中 xxx 相比 xxx 支持更多其他参数，具体如下：
+其中 PyTorch 相比 Paddle 支持更多其他参数，具体如下：
 
 ### 参数映射
 
-| PyTorch | PaddlePaddle | 备注 |
-| ------- | ------------ | ---- |
-|    -    |    xxx    | 表示xxx，PyTorch 无此参数，Paddle 保持默认即可。 |
+| PyTorch      | PaddlePaddle | 备注                                                            |
+| ------------ | ------------ | --------------------------------------------------------------- |
+| in1_features | in1_features | 每个 x1 元素的维度。                                            |
+| in2_features | in2_features | 每个 x2 元素的维度。                                            |
+| out_features | out_features | 输出张量的维度。                                                |
+| bias         | -            | 是否训练增加的 bias，Paddle 暂无转写方式。                      |
+| device       | -            | Tensor 的设备，Paddle 无此参数，需要进行转写。                  |
+| dtype        | -            | Tensor 的数据类型，Paddle 无此参数，需要进行转写。             |
+| -            | weight_attr  | 指定权重参数属性的对象，PyTorch 无此参数，Paddle 保持默认即可。 |
+| -            | bias_attr    | 指定偏置参数属性的对象，PyTorch 无此参数，Paddle 保持默认即可。 |
 
 ### 转写示例
 
-#### xxx 参数：xxx
-``` python
-# PyTorch 写法:
-xxx
+#### device 参数：Tensor 的设备
 
-# Paddle 写法:
-xxx
+```python
+# Pytorch 写法
+y = torch.nn.Bilinear(in1_features, in2_features, out_features, device=torch.device('cpu'))
 
-# 注：xxx
+# Paddle 写法
+y = paddle.nn.Bilinear(in1_features, in2_features, out_features)
+y.cpu()
+```
+
+#### dtype 参数：Tensor 的数据类型
+
+```python
+# Pytorch 写法
+y = torch.nn.Bilinear(in1_features, in2_features, out_features, dtype=torch.float32)
+
+# Paddle 写法
+y = paddle.nn.Bilinear(in1_features, in2_features, out_features).astype(paddle.float32)
 ```

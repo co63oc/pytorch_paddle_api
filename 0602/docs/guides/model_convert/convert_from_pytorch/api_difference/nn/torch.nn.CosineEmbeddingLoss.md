@@ -1,34 +1,24 @@
-## [xxx 参数更多]torch.nn.CosineEmbeddingLoss
+## [torch 参数更多]torch.nn.CosineEmbeddingLoss
 
 ### [torch.nn.CosineEmbeddingLoss](https://pytorch.org/docs/1.13/generated/torch.nn.CosineEmbeddingLoss.html#torch.nn.CosineEmbeddingLoss)
 
 ```python
-torch.nn.CosineEmbeddingLoss(xxx)
+torch.nn.CosineEmbeddingLoss(margin=0.0, size_average=None, reduce=None, reduction='mean')
 ```
 
 ### [paddle.nn.CosineEmbeddingLoss](https://www.paddlepaddle.org.cn/documentation/docs/zh/api/paddle/nn/CosineEmbeddingLoss_cn.html)
 
 ```python
-paddle.nn.CosineEmbeddingLoss(xxx)
+paddle.nn.CosineEmbeddingLoss(margin=0, reduction='mean', name=None)
 ```
 
-其中 xxx 相比 xxx 支持更多其他参数，具体如下：
+其中 PyTorch 相比 Paddle 支持更多其他参数，具体如下：
 
 ### 参数映射
 
-| PyTorch | PaddlePaddle | 备注 |
-| ------- | ------------ | ---- |
-|    -    |    xxx    | 表示xxx，PyTorch 无此参数，Paddle 保持默认即可。 |
-
-### 转写示例
-
-#### xxx 参数：xxx
-``` python
-# PyTorch 写法:
-xxx
-
-# Paddle 写法:
-xxx
-
-# 注：xxx
-```
+| PyTorch      | PaddlePaddle | 备注                                           |
+| ------------ | ------------ | ---------------------------------------------- |
+| margin       | margin       | 可以设置的范围为[-1, 1]。                      |
+| size_average | -            | 已废弃，和 reduce 组合决定损失计算方式。       |
+| reduce       | -            | 已废弃，和 size_average 组合决定损失计算方式。 |
+| reduction    | reduction    | 指定应用于输出结果的计算方式。                 |
