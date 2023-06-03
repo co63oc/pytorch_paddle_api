@@ -1,34 +1,34 @@
-## [xxx 参数更多]torch.Tensor.half
+## [torch 参数更多]torch.Tensor.half
 
 ### [torch.Tensor.half](https://pytorch.org/docs/1.13/generated/torch.Tensor.half.html#torch.Tensor.half)
 
 ```python
-torch.Tensor.half(xxx)
+torch.Tensor.half(memory_format=torch.preserve_format)
 ```
 
 ### [paddle.Tensor.astype](https://www.paddlepaddle.org.cn/documentation/docs/zh/api/paddle/Tensor_cn.html#astype-dtype)
 
 ```python
-paddle.Tensor.astype(xxx)
+paddle.Tensor.astype(dtype)
 ```
 
-其中 xxx 相比 xxx 支持更多其他参数，具体如下：
+其中 PyTorch 相比 Paddle 支持更多其他参数，具体如下：
 
 ### 参数映射
 
-| PyTorch | PaddlePaddle | 备注 |
-| ------- | ------------ | ---- |
-|    -    |    xxx    | 表示xxx，PyTorch 无此参数，Paddle 保持默认即可。 |
+| PyTorch       | PaddlePaddle | 备注                                                                    |
+| ------------- | ------------ | ----------------------------------------------------------------------- |
+| memory_format | -            | 表示内存格式，Paddle 无此参数，一般对网络训练结果影响不大，可直接删除。 |
+| -             | dtype        | 转换数据类型，PyTorch 无此参数，Paddle 设置为 paddle.float16。          |
 
 ### 转写示例
 
-#### xxx 参数：xxx
-``` python
+#### dtype 参数：转换数据类型
+
+```python
 # PyTorch 写法:
-xxx
+y = x.half()
 
 # Paddle 写法:
-xxx
-
-# 注：xxx
+y = x.astype(paddle.float16)
 ```

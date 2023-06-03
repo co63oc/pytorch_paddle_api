@@ -1,34 +1,24 @@
-## [xxx 参数更多]torch.Tensor.multinomial
+## [torch 参数更多]torch.Tensor.multinomial
 
 ### [torch.Tensor.multinomial](https://pytorch.org/docs/1.13/generated/torch.Tensor.multinomial.html#torch.Tensor.multinomial)
 
 ```python
-torch.Tensor.multinomial(xxx)
+torch.Tensor.multinomial(num_samples, replacement=False, *, generator=None)
 ```
 
 ### [paddle.multinomial](https://www.paddlepaddle.org.cn/documentation/docs/zh/api/paddle/multinomial_cn.html)
 
 ```python
-paddle.multinomial(xxx)
+paddle.multinomial(x, num_samples=1, replacement=False, name=None)
 ```
 
-其中 xxx 相比 xxx 支持更多其他参数，具体如下：
+其中 PyTorch 相比 Paddle 支持更多其他参数，具体如下：
 
 ### 参数映射
 
-| PyTorch | PaddlePaddle | 备注 |
-| ------- | ------------ | ---- |
-|    -    |    xxx    | 表示xxx，PyTorch 无此参数，Paddle 保持默认即可。 |
-
-### 转写示例
-
-#### xxx 参数：xxx
-``` python
-# PyTorch 写法:
-xxx
-
-# Paddle 写法:
-xxx
-
-# 注：xxx
-```
+| PyTorch      | PaddlePaddle | 备注                                   |
+| ------------ | ------------ | -------------------------------------- |
+| torch.Tensor | x            | 输入 Tensor，PyTorch 为 torch.Tensor。 |
+| num_samples  | num_samples  | 采样的次数。                           |
+| replacement  | replacement  | 是否是可放回的采样。                   |
+| generator    | -            | generator 参数，Paddle 暂无转写方式。  |
