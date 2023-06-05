@@ -21,5 +21,5 @@ paddle.nn.TransformerEncoder(encoder_layer, num_layers, norm=None)
 | encoder_layer        | encoder_layer | TransformerEncoderLayer 的一个实例。       |
 | num_layers           | num_layers    | TransformerEncoderLayer 层的叠加数量。     |
 | norm                 | norm          | 层标准化（Layer Normalization）。          |
-| enable_nested_tensor | -             | 是否转为嵌套 Tensor，Paddle 暂无转写方式。 |
-| mask_check           | -             | mask_check 参数，Paddle 暂无转写方式。     |
+| enable_nested_tensor | -             | 是否转为嵌套 Tensor，Paddle 无此参数，暂无转写方式。 |
+| mask_check           | -             | mask_check 参数，Paddle 无此参数，暂无转写方式。     |

@@ -16,9 +16,8 @@ paddle.multinomial(x, num_samples=1, replacement=False, name=None)
 
 ### 参数映射
 
-| PyTorch      | PaddlePaddle | 备注                                   |
-| ------------ | ------------ | -------------------------------------- |
-| torch.Tensor | x            | 输入 Tensor，PyTorch 为 torch.Tensor。 |
-| num_samples  | num_samples  | 采样的次数。                           |
-| replacement  | replacement  | 是否是可放回的采样。                   |
-| generator    | -            | generator 参数，Paddle 暂无转写方式。  |
+| PyTorch     | PaddlePaddle | 备注                                                                                |
+| ----------- | ------------ | ----------------------------------------------------------------------------------- |
+| num_samples | num_samples  | 采样的次数。                                                                        |
+| replacement | replacement  | 是否是可放回的采样。                                                                |
+| generator   | -            | 用于采样的伪随机数生成器，Paddle 无此参数，一般对网络训练结果影响不大，可直接删除。 |

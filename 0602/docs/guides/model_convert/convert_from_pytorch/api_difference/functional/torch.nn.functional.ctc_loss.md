@@ -16,12 +16,12 @@ paddle.nn.functional.ctc_loss(log_probs, labels, input_lengths, label_lengths, b
 
 ### 参数映射
 
-| PyTorch        | PaddlePaddle  | 备注                                                     |
-| -------------- | ------------- | -------------------------------------------------------- |
-| log_probs      | log_probs     | 经过 padding 的概率序列。                                |
-| targets        | labels        | 经过 padding 的标签序列，仅参数名不一致。                |
-| input_lengths  | input_lengths | 表示输入 log_probs 数据中每个序列的长度。                |
-| target_lengths | label_lengths | 表示 label 中每个序列的长度，仅参数名不一致。            |
-| blank          | blank         | 空格标记的 ID 值。                                       |
-| reduction      | reduction     | 指定应用于输出结果的计算方式。                           |
-| zero_infinity  | -             | 是否设置 infinity 及关联梯度 为 0，Paddle 暂无转写方式。 |
+| PyTorch        | PaddlePaddle  | 备注                                                               |
+| -------------- | ------------- | ------------------------------------------------------------------ |
+| log_probs      | log_probs     | 经过 padding 的概率序列。                                          |
+| targets        | labels        | 经过 padding 的标签序列，仅参数名不一致。                          |
+| input_lengths  | input_lengths | 表示输入 log_probs 数据中每个序列的长度。                          |
+| target_lengths | label_lengths | 表示 label 中每个序列的长度，仅参数名不一致。                      |
+| blank          | blank         | 空格标记的 ID 值。                                                 |
+| reduction      | reduction     | 指定应用于输出结果的计算方式。                                     |
+| zero_infinity  | -             | 是否设置 infinity 及关联梯度 为 0，Paddle 无此参数，暂无转写方式。 |

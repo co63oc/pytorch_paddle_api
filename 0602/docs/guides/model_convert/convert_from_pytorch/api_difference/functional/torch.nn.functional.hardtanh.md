@@ -16,9 +16,21 @@ paddle.nn.functional.hardtanh(x, min=-1.0, max=1.0, name=None)
 
 ### 参数映射
 
-| PyTorch | PaddlePaddle | 备注                                                                                                            |
-| ------- | ------------ | --------------------------------------------------------------------------------------------------------------- |
-| input   | x            | 输入的 Tensor，仅参数名不一致。                                                                                 |
-| min_val | min          | hardtanh 激活计算公式中的 min 值，仅参数名不一致。                                                              |
-| max_val | max          | hardtanh 激活计算公式中的 max 值，仅参数名不一致。                                                              |
-| inplace | -            | 表示在不更改变量的内存地址的情况下，直接修改变量的值，Paddle 无此参数，一般对网络训练结果影响不大，可直接删除。 |
+| PyTorch | PaddlePaddle | 备注                                                                                  |
+| ------- | ------------ | ------------------------------------------------------------------------------------- |
+| input   | x            | 输入的 Tensor，仅参数名不一致。                                                       |
+| min_val | min          | hardtanh 激活计算公式中的 min 值，仅参数名不一致。                                    |
+| max_val | max          | hardtanh 激活计算公式中的 max 值，仅参数名不一致。                                    |
+| inplace | -            | 表示在不更改变量的内存地址的情况下，直接修改变量的值，Paddle 无此参数，需要进行转写。 |
+
+### 转写示例
+
+#### inplace 参数：表示在不更改变量的内存地址的情况下，直接修改变量的值
+
+```python
+# PyTorch 写法:
+torch.nn.functional.hardtanh(x, inplace=True)
+
+# Paddle 写法:
+paddle.assign(paddle.nn.functional.hardtanh(x), x)
+```

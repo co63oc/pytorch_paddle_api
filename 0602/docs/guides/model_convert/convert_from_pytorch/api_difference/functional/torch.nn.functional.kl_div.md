@@ -16,14 +16,14 @@ paddle.nn.functional.kl_div(input, label, reduction='mean', name=None)
 
 ### 参数映射
 
-| PyTorch      | PaddlePaddle | 备注                                            |
-| ------------ | ------------ | ----------------------------------------------- |
-| input        | input        | 输入的 Tensor。                                 |
-| target       | label        | 标签，仅参数名不一致。                          |
-| size_average | -            | 已废弃，和 reduce 组合决定损失计算方式。        |
-| reduce       | -            | 已废弃，和 size_average 组合决定损失计算方式。  |
-| reduction    | reduction    | 指定应用于输出结果的计算方式。                  |
-| log_target   | -            | target 是否传入 log 空间，Paddle 暂无转写方式。 |
+| PyTorch      | PaddlePaddle | 备注                                                      |
+| ------------ | ------------ | --------------------------------------------------------- |
+| input        | input        | 输入的 Tensor。                                           |
+| target       | label        | 标签，仅参数名不一致。                                    |
+| size_average | -            | 已废弃，和 reduce 组合决定损失计算方式。                  |
+| reduce       | -            | 已废弃，和 size_average 组合决定损失计算方式。            |
+| reduction    | reduction    | 指定应用于输出结果的计算方式。                            |
+| log_target   | -            | target 是否传入 log 空间，Paddle 无此参数，暂无转写方式。 |
 
 ### 转写示例
 

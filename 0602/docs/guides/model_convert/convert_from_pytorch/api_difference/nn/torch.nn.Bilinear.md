@@ -21,8 +21,8 @@ paddle.nn.Bilinear(in1_features, in2_features, out_features, weight_attr=None, b
 | in1_features | in1_features | 每个 x1 元素的维度。                                            |
 | in2_features | in2_features | 每个 x2 元素的维度。                                            |
 | out_features | out_features | 输出张量的维度。                                                |
-| bias         | -            | 是否训练增加的 bias，Paddle 暂无转写方式。                      |
-| device       | -            | Tensor 的设备，Paddle 暂无转写方式。                  |
-| dtype        | -            | Tensor 的数据类型，Paddle 暂无转写方式。             |
+| bias         | -            | 是否训练增加的 bias，Paddle 无此参数，暂无转写方式。                      |
+| device       | -            | Tensor 的设备，Paddle 无此参数，暂无转写方式。                  |
+| dtype        | -            | Tensor 的数据类型，Paddle 无此参数，暂无转写方式。             |
 | -            | weight_attr  | 指定权重参数属性的对象，PyTorch 无此参数，Paddle 保持默认即可。 |
 | -            | bias_attr    | 指定偏置参数属性的对象，PyTorch 无此参数，Paddle 保持默认即可。 |

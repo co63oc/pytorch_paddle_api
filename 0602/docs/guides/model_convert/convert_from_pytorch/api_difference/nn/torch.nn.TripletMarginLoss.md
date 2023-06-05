@@ -9,7 +9,7 @@ torch.nn.TripletMarginLoss(margin=1.0, p=2.0, eps=1e-06, swap=False, size_averag
 ### [paddle.nn.TripletMarginLoss](https://www.paddlepaddle.org.cn/documentation/docs/zh/api/paddle/nn/TripletMarginLoss_cn.html)
 
 ```python
-paddle.nn.TripletMarginLoss(margin: float = 1.0, p: float = 2., epsilon: float = 1e-6, swap: bool = False, reduction: str = 'mean', name: str = None)
+paddle.nn.TripletMarginLoss(margin=1.0, p=2., epsilon=1e-6, swap=False, reduction='mean', name=None)
 ```
 
 其中 PyTorch 相比 Paddle 支持更多其他参数，具体如下：

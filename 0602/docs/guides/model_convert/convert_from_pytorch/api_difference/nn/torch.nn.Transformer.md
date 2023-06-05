@@ -27,11 +27,11 @@ paddle.nn.Transformer(d_model=512, nhead=8, num_encoder_layers=6, num_decoder_la
 | activation         | activation         | 前馈神经网络的激活函数。                                                            |
 | custom_encoder     | custom_encoder     | 若提供该参数，则将 custom_encoder 作为编码器。                                      |
 | custom_decoder     | custom_decoder     | 若提供该参数，则将 custom_decoder 作为解码器。                                      |
-| layer_norm_eps     | -                  | 层 normalization 组件的 eps 值，Paddle 暂无转写方式。                               |
-| batch_first        | -                  | 是否 Tensor 中 batch 在前，Paddle 暂无转写方式。                                         |
-| norm_first         | normalize_before   | 是否 LayerNorms 操作在 attention 和 feedforward 前，仅参数名不一致。                     |
-| device             | -                  | Tensor 的设备，Paddle 暂无转写方式。                                                |
-| dtype              | -                  | Tensor 的数据类型，Paddle 暂无转写方式。                                            |
+| layer_norm_eps     | -                  | 层 normalization 组件的 eps 值，Paddle 无此参数，暂无转写方式。                     |
+| batch_first        | -                  | 表示输入数据的第 0 维是否代表 batch_size，Paddle 无此参数，暂无转写方式。           |
+| norm_first         | normalize_before   | 是否 LayerNorms 操作在 attention 和 feedforward 前，仅参数名不一致。                |
+| device             | -                  | Tensor 的设备，Paddle 无此参数，暂无转写方式。                                      |
+| dtype              | -                  | Tensor 的数据类型，Paddle 无此参数，暂无转写方式。                                  |
 | -                  | attn_dropout       | 多头自注意力机制中对注意力目标的随机失活率，PyTorch 无此参数，Paddle 保持默认即可。 |
 | -                  | act_dropout        | 前馈神经网络的激活函数后的 dropout，PyTorch 无此参数，Paddle 保持默认即可。         |
 | -                  | weight_attr        | 指定权重参数属性的对象，PyTorch 无此参数，Paddle 保持默认即可。                     |

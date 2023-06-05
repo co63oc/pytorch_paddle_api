@@ -16,8 +16,20 @@ paddle.nn.functional.celu(x, alpha=1.0, name=None)
 
 ### 参数映射
 
-| PyTorch | PaddlePaddle | 备注                                                                                                            |
-| ------- | ------------ | --------------------------------------------------------------------------------------------------------------- |
-| input   | x            | 输入的 Tensor，仅参数名不一致。                                                                                                 |
-| alpha   | alpha        | alpha 参数。                                                                                                    |
-| inplace | -            | 表示在不更改变量的内存地址的情况下，直接修改变量的值，Paddle 无此参数，一般对网络训练结果影响不大，可直接删除。 |
+| PyTorch | PaddlePaddle | 备注                                                                                  |
+| ------- | ------------ | ------------------------------------------------------------------------------------- |
+| input   | x            | 输入的 Tensor，仅参数名不一致。                                                       |
+| alpha   | alpha        | alpha 参数。                                                                          |
+| inplace | -            | 表示在不更改变量的内存地址的情况下，直接修改变量的值，Paddle 无此参数，需要进行转写。 |
+
+### 转写示例
+
+#### inplace 参数：表示在不更改变量的内存地址的情况下，直接修改变量的值
+
+```python
+# PyTorch 写法:
+torch.nn.functional.celu(x, inplace=True)
+
+# Paddle 写法:
+paddle.assign(paddle.nn.functional.celu(x), x)
+```
