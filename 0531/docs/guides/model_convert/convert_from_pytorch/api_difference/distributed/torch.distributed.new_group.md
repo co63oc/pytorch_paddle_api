@@ -19,6 +19,6 @@ paddle.distributed.(ranks=None, backend=None)
 | PyTorch    | PaddlePaddle | 备注                                      |
 | ---------- | ------------ | ----------------------------------------- |
 | ranks      | ranks        | 用于新建通信组的全局 rank 列表。          |
-| timeout    | -            | 进程组执行超时时间，Paddle 暂无转写方式。 |
+| timeout    | -            | 进程组执行超时时间，Paddle 无此参数，暂无转写方式。 |
 | backend    | backend      | 用于新建通信组的后端支持。                |
-| pg_options | -            | 进程组选项，Paddle 暂无转写方式。         |
+| pg_options | -            | 进程组选项，Paddle 无此参数，暂无转写方式。         |
