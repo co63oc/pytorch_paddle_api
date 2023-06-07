@@ -16,21 +16,9 @@ paddle.nn.functional.thresholded_relu(x, threshold=1.0, name=None)
 
 ### 参数映射
 
-| PyTorch   | PaddlePaddle | 备注                                                                                  |
-| --------- | ------------ | ------------------------------------------------------------------------------------- |
-| input     | x            | 输入的 Tensor，仅参数名不一致。                                                       |
-| threshold | threshold    | thresholded_relu 激活计算公式中的 threshold 值。                                      |
-| value     | -            | 用于替换的值，Paddle 无此参数，暂无转写方式。                                         |
-| inplace   | -            | 表示在不更改变量的内存地址的情况下，直接修改变量的值，Paddle 无此参数，需要进行转写。 |
-
-### 转写示例
-
-#### inplace 参数：表示在不更改变量的内存地址的情况下，直接修改变量的值
-
-```python
-# PyTorch 写法:
-torch.nn.functional.thresholded_relu(x, inplace=True)
-
-# Paddle 写法:
-paddle.assign(paddle.nn.functional.thresholded_relu(x), x)
-```
+| PyTorch   | PaddlePaddle | 备注                                                                                                            |
+| --------- | ------------ | --------------------------------------------------------------------------------------------------------------- |
+| input     | x            | 输入的 Tensor，仅参数名不一致。                                                                                 |
+| threshold | threshold    | thresholded_relu 激活计算公式中的 threshold 值。                                                                |
+| value     | -            | 不在指定 threshold 范围时的值，Paddle 取值为 0，暂无转写方式。                                                  |
+| inplace   | -            | 表示在不更改变量的内存地址的情况下，直接修改变量的值，Paddle 无此参数，一般对网络训练结果影响不大，可直接删除。 |

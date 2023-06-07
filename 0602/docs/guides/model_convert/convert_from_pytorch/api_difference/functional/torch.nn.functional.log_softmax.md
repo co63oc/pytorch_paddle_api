@@ -16,8 +16,9 @@ paddle.nn.functional.log_softmax(x, axis=- 1, dtype=None, name=None)
 
 ### 参数映射
 
-| PyTorch | PaddlePaddle | 备注                                        |
-| ------- | ------------ | ------------------------------------------- |
-| input   | x            | 输入的 Tensor，仅参数名不一致。             |
-| dim     | axis         | 指定对输入 x 进行运算的轴，仅参数名不一致。 |
-| dtype   | dtype        | 输入 Tensor 的数据类型。                    |
+| PyTorch      | PaddlePaddle | 备注                                               |
+| ------------ | ------------ | -------------------------------------------------- |
+| input        | x            | 输入的 Tensor，仅参数名不一致。                    |
+| dim          | axis         | 指定对输入 x 进行运算的轴，仅参数名不一致。        |
+| \_stacklevel | -            | \_stacklevel 参数，Paddle 无此参数，暂无转写方式。 |
+| dtype        | dtype        | 输入 Tensor 的数据类型。                           |

@@ -32,6 +32,6 @@ paddle.Tensor.norm(p='fro', axis=None, keepdim=False, name=None)
 x.norm(dim=-1, dtype=torch.float32)
 
 # Paddle 写法
-x.astype('float32')
-x.norm(dim=-1)
+y = x.astype('float32')
+y.norm(dim=-1)
 ```

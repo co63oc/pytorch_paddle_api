@@ -21,14 +21,39 @@ paddle.nn.MultiHeadAttention(embed_dim, num_heads, dropout=0.0, kdim=None, vdim=
 | embed_dim     | embed_dim    | 输入输出的维度。                                                          |
 | num_heads     | num_heads    | 多头注意力机制的 Head 数量。                                              |
 | dropout       | dropout      | 注意力目标的随机失活率。                                                  |
-| bias          | -            | 是否增加 bias 到输入/输出投影层，Paddle 无此参数，暂无转写方式。          |
+| bias          | bias_attr    | 指定偏置参数属性的对象，Paddle 支持更多功能，同时支持 bool 用法。         |
 | add_bias_kv   | -            | 在 dim=0 增加 bias，Paddle 无此参数，暂无转写方式。                       |
 | add_zero_attn | -            | 在 dim=1 增加批量 0 值，Paddle 无此参数，暂无转写方式。                   |
 | kdim          | kdim         | 键值对中 key 的维度。                                                     |
 | vdim          | vdim         | 键值对中 value 的维度。                                                   |
 | batch_first   | -            | 表示输入数据的第 0 维是否代表 batch_size，Paddle 无此参数，暂无转写方式。 |
-| device        | -            | Tensor 的设备，Paddle 无此参数，暂无转写方式。                            |
-| dtype         | -            | Tensor 的数据类型，Paddle 无此参数，暂无转写方式。                        |
+| device        | -            | Tensor 的设备，Paddle 无此参数，需要进行转写。                            |
+| dtype         | -            | Tensor 的数据类型，Paddle 无此参数，需要进行转写。                        |
 | -             | need_weights | 表明是否返回注意力权重，PyTorch 无此参数，Paddle 保持默认即可。           |
 | -             | weight_attr  | 指定权重参数属性的对象，PyTorch 无此参数，Paddle 保持默认即可。           |
-| -             | bias_attr    | 指定偏置参数属性的对象，PyTorch 无此参数，Paddle 保持默认即可。           |
+
+### 转写示例
+
+#### device：Tensor 的设备
+
+```python
+# Pytorch 写法
+m = torch.nn.MultiheadAttention(embed_dim, num_heads，device=torch.device('cpu'))
+y = m(x)
+
+# Paddle 写法
+m = paddle.nn.MultiheadAttention(embed_dim, num_heads)
+y = m(x).cpu()
+```
+
+#### dtype：Tensor 的数据类型
+
+```python
+# Pytorch 写法
+m = torch.nn.MultiheadAttention(embed_dim, num_heads，dtype=torch.float32)
+y = m(x)
+
+# Paddle 写法
+m = paddle.nn.MultiheadAttention(embed_dim, num_heads)
+y = m(x).astype(paddle.float32)
+```

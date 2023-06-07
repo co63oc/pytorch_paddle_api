@@ -12,6 +12,8 @@ torch.nn.RNNBase(mode, input_size, hidden_size, num_layers=1, bias=True, batch_f
 paddle.nn.RNNCellBase(name_scope=None, dtype='float32')
 ```
 
+需要调用 get_initial_states(batch_ref,shape=None,dtype=None,init_value=0.,batch_dim_idx=0) 生成初始状态。
+
 其中 PyTorch 相比 Paddle 支持更多其他参数，具体如下：
 
 ### 参数映射
