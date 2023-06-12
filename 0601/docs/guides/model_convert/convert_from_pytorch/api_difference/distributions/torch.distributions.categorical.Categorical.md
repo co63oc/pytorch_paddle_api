@@ -18,6 +18,6 @@ paddle.distribution.Categorical(logits, name=None)
 
 | PyTorch       | PaddlePaddle | 备注                                          |
 | ------------- | ------------ | --------------------------------------------- |
-| probs         | -            | 事件概率。                                    |
+| probs         | -            | 事件概率，Paddle 无此参数，暂无转写方式。                                    |
 | logits        | logits       | 类别分布对应的 logits。                       |
 | validate_args | -            | 有效参数列表，Paddle 无此参数，暂无转写方式。 |

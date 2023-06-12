@@ -20,4 +20,4 @@ paddle.nn.functional.log_softmax(x, axis=- 1, dtype=None, name=None)
 | ------- | ------------ | ------------------------------------------- |
 | input   | x            | 输入的 Tensor，仅参数名不一致。             |
 | dim     | axis         | 指定对输入 x 进行运算的轴，仅参数名不一致。 |
-| dtype   | dtype        | 输入 Tensor 的数据类型。                    |
+| dtype   | dtype        | 输出 Tensor 的数据类型。                    |

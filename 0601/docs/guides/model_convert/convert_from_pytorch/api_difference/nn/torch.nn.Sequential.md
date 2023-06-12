@@ -18,4 +18,4 @@ paddle.nn.Sequential(*layers)
 
 | PyTorch | PaddlePaddle | 备注                                                |
 | ------- | ------------ | --------------------------------------------------- |
-| arg     | layers       | Layers 或可迭代的 name Layer 对，，仅参数名不一致。 |
+| arg     | layers       | Layers 或可迭代的 name Layer 对，仅参数名不一致。 |
