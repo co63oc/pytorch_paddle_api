@@ -16,9 +16,9 @@ paddle.get_cuda_rng_state()
 
 ### 参数映射
 
-| PyTorch | PaddlePaddle   | 备注                                                                                           |
-| ------- | -------------- | ---------------------------------------------------------------------------------------------- |
-| Tensor  | GeneratorState | 返回参数类型不一致, Pytorch 返回 torch.ByteTensor，Paddle 返回 GeneratorState 对象，需要进行转写。 |
+| PyTorch | PaddlePaddle | 备注                                                                                               |
+| ------- | ------------ | -------------------------------------------------------------------------------------------------- |
+| 返回值  | 返回值       | 返回参数类型不一致, Pytorch 返回 torch.ByteTensor，Paddle 返回 GeneratorState 对象，暂无转写方式。 |
 
 ### 转写示例
 
