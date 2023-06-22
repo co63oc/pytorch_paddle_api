@@ -16,10 +16,28 @@ foreach ($api_list as $api) {
 	if (empty($list1[1])) {
 		continue;
 	}
-
-$pytorch_data[$list1[0]] = $list1;
-$pytorch_data[$list1[0]]['url'] = get_pytorch_url($list1[1]);
+	$list1[2] = trim($list1[2], " \"");
+	$pytorch_data[$list1[0]] = $list1;
+	$pytorch_data[$list1[0]]['url'] = get_pytorch_url($list1[1]);
+	if (!empty($list1[2])) {
+		$pytorch_data[$list1[0]]['url2'] = get_paddle_url($list1[2], $list1[0]);
+	}
 }
 
 
-print_r($pytorch_data);
+$list1 = [302,306];
+foreach ($list1 as $v) {
+	// print_r($pytorch_data[$v]);
+}
+
+echo "| pytorch | paddle |\n";
+echo "| - | - |\n";
+
+foreach ($pytorch_data as $k => $v) {
+	if (!empty($v[2])) {
+		$str2 = sprintf(" [%s](%s)", $v[2], $v['url2'][0]);
+	} else {
+		$str2 = "";
+	}
+	echo sprintf("| [%03d %s](%s) | %s |\n", $v[0], $v[1], $v['url'], $str2);
+}

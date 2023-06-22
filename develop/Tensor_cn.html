@@ -1,0 +1,255 @@
+
+  <div class="toc" id="navigation-toc"> 
+   <ul> 
+    <li><a class="reference internal" href="#">Tensor</a>
+     <ul> 
+      <li><a class="reference internal" href="#clear-grad">clear_grad</a></li> 
+      <li><a class="reference internal" href="#clear-gradient">clear_gradient</a></li> 
+      <li><a class="reference internal" href="#dtype">dtype</a></li> 
+      <li><a class="reference internal" href="#grad">grad</a></li> 
+      <li><a class="reference internal" href="#is-leaf">is_leaf</a></li> 
+      <li><a class="reference internal" href="#item-args">item(*args)</a></li> 
+      <li><a class="reference internal" href="#name">name</a></li> 
+      <li><a class="reference internal" href="#ndim">ndim</a></li> 
+      <li><a class="reference internal" href="#persistable">persistable</a></li> 
+      <li><a class="reference internal" href="#place">place</a></li> 
+      <li><a class="reference internal" href="#shape">shape</a></li> 
+      <li><a class="reference internal" href="#stop-gradient">stop_gradient</a></li> 
+      <li><a class="reference internal" href="#abs-name-none">abs(name=None)</a></li> 
+      <li><a class="reference internal" href="#angle-name-none">angle(name=None)</a></li> 
+      <li><a class="reference internal" href="#acos-name-none">acos(name=None)</a></li> 
+      <li><a class="reference internal" href="#add-y-name-none">add(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#id3">add_(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#add-n-inputs-name-none">add_n(inputs, name=None)</a></li> 
+      <li><a class="reference internal" href="#addmm-x-y-beta-1-0-alpha-1-0-name-none">addmm(x, y, beta=1.0, alpha=1.0, name=None)</a></li> 
+      <li><a class="reference internal" href="#all-axis-none-keepdim-false-name-none">all(axis=None, keepdim=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#allclose-y-rtol-1e-05-atol-1e-08-equal-nan-false-name-none">allclose(y, rtol=1e-05, atol=1e-08, equal_nan=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#isclose-x-y-rtol-1e-05-atol-1e-08-equal-nan-false-name-none">isclose(x, y, rtol=1e-05, atol=1e-08, equal_nan=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#any-axis-none-keepdim-false-name-none">any(axis=None, keepdim=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#argmax-axis-none-keepdim-false-dtype-int64-name-none">argmax(axis=None, keepdim=False, dtype=int64, name=None)</a></li> 
+      <li><a class="reference internal" href="#argmin-axis-none-keepdim-false-dtype-int64-name-none">argmin(axis=None, keepdim=False, dtype=int64, name=None)</a></li> 
+      <li><a class="reference internal" href="#argsort-axis-1-descending-false-name-none">argsort(axis=-1, descending=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#asin-name-none">asin(name=None)</a></li> 
+      <li><a class="reference internal" href="#astype-dtype">astype(dtype)</a></li> 
+      <li><a class="reference internal" href="#atan-name-none">atan(name=None)</a></li> 
+      <li><a class="reference internal" href="#backward-grad-tensor-none-retain-graph-false">backward(grad_tensor=None, retain_graph=False)</a></li> 
+      <li><a class="reference internal" href="#bincount-weights-none-minlength-0">bincount(weights=None, minlength=0)</a></li> 
+      <li><a class="reference internal" href="#bitwise-and-y-out-none-name-none">bitwise_and(y, out=None, name=None)</a></li> 
+      <li><a class="reference internal" href="#bitwise-not-out-none-name-none">bitwise_not(out=None, name=None)</a></li> 
+      <li><a class="reference internal" href="#bitwise-or-y-out-none-name-none">bitwise_or(y, out=None, name=None)</a></li> 
+      <li><a class="reference internal" href="#bitwise-xor-y-out-none-name-none">bitwise_xor(y, out=None, name=None)</a></li> 
+      <li><a class="reference internal" href="#bmm-y-name-none">bmm(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#broadcast-to-shape-name-none">broadcast_to(shape, name=None)</a></li> 
+      <li><a class="reference internal" href="#bucketize-sorted-sequence-out-int32-false-right-false-name-none">bucketize(sorted_sequence, out_int32=False, right=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#cast-dtype">cast(dtype)</a></li> 
+      <li><a class="reference internal" href="#ceil-name-none">ceil(name=None)</a></li> 
+      <li><a class="reference internal" href="#id4">ceil_(name=None)</a></li> 
+      <li><a class="reference internal" href="#cholesky-upper-false-name-none">cholesky(upper=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#chunk-chunks-axis-0-name-none">chunk(chunks, axis=0, name=None)</a></li> 
+      <li><a class="reference internal" href="#id5">clear_gradient()</a></li> 
+      <li><a class="reference internal" href="#clip-min-none-max-none-name-none">clip(min=None, max=None, name=None)</a></li> 
+      <li><a class="reference internal" href="#id6">clip_(min=None, max=None, name=None)</a></li> 
+      <li><a class="reference internal" href="#clone">clone()</a></li> 
+      <li><a class="reference internal" href="#concat-axis-0-name-none">concat(axis=0, name=None)</a></li> 
+      <li><a class="reference internal" href="#conj-name-none">conj(name=None)</a></li> 
+      <li><a class="reference internal" href="#cos-name-none">cos(name=None)</a></li> 
+      <li><a class="reference internal" href="#cosh-name-none">cosh(name=None)</a></li> 
+      <li><a class="reference internal" href="#count-nonzero-axis-none-keepdim-false-name-none">count_nonzero(axis=None, keepdim=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#cpu">cpu()</a></li> 
+      <li><a class="reference internal" href="#cross-y-axis-none-name-none">cross(y, axis=None, name=None)</a></li> 
+      <li><a class="reference internal" href="#cuda-device-id-none-blocking-false">cuda(device_id=None, blocking=False)</a></li> 
+      <li><a class="reference internal" href="#cumsum-axis-none-dtype-none-name-none">cumsum(axis=None, dtype=None, name=None)</a></li> 
+      <li><a class="reference internal" href="#deg2rad-x-name-none">deg2rad(x, name=None)</a></li> 
+      <li><a class="reference internal" href="#detach">detach()</a></li> 
+      <li><a class="reference internal" href="#diagonal-offset-0-axis1-0-axis2-1-name-none">diagonal(offset=0, axis1=0, axis2=1, name=None)</a></li> 
+      <li><a class="reference internal" href="#digamma-name-none">digamma(name=None)</a></li> 
+      <li><a class="reference internal" href="#dim">dim()</a></li> 
+      <li><a class="reference internal" href="#dist-y-p-2">dist(y, p=2)</a></li> 
+      <li><a class="reference internal" href="#divide-y-name-none">divide(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#dot-y-name-none">dot(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#diff-x-n-1-axis-1-prepend-none-append-none-name-none">diff(x, n=1, axis=-1, prepend=None, append=None, name=None)</a></li> 
+      <li><a class="reference internal" href="#element-size">element_size()</a></li> 
+      <li><a class="reference internal" href="#equal-y-name-none">equal(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#equal-all-y-name-none">equal_all(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#erf-name-none">erf(name=None)</a></li> 
+      <li><a class="reference internal" href="#exp-name-none">exp(name=None)</a></li> 
+      <li><a class="reference internal" href="#id7">exp_(name=None)</a></li> 
+      <li><a class="reference internal" href="#expand-shape-name-none">expand(shape, name=None)</a></li> 
+      <li><a class="reference internal" href="#expand-as-y-name-none">expand_as(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#exponential-lam-1-0-name-none">exponential_(lam=1.0, name=None)</a></li> 
+      <li><a class="reference internal" href="#eigvals-y-name-none">eigvals(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#fill-x-value-name-none">fill_(x, value, name=None)</a></li> 
+      <li><a class="reference internal" href="#zero-x-name-none">zero_(x, name=None)</a></li> 
+      <li><a class="reference internal" href="#fill-diagonal-x-value-offset-0-wrap-false-name-none">fill_diagonal_(x, value, offset=0, wrap=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#fill-diagonal-tensor-x-y-offset-0-dim1-0-dim2-1-name-none">fill_diagonal_tensor(x, y, offset=0, dim1=0, dim2=1, name=None)</a></li> 
+      <li><a class="reference internal" href="#id8">fill_diagonal_tensor_(x, y, offset=0, dim1=0, dim2=1, name=None)</a></li> 
+      <li><a class="reference internal" href="#flatten-start-axis-0-stop-axis-1-name-none">flatten(start_axis=0, stop_axis=-1, name=None)</a></li> 
+      <li><a class="reference internal" href="#id9">flatten_(start_axis=0, stop_axis=-1, name=None)</a></li> 
+      <li><a class="reference internal" href="#flip-axis-name-none">flip(axis, name=None)</a></li> 
+      <li><a class="reference internal" href="#rot90-k-1-axis-0-1-name-none">rot90(k=1, axis=[0, 1], name=None)</a></li> 
+      <li><a class="reference internal" href="#floor-name-none">floor(name=None)</a></li> 
+      <li><a class="reference internal" href="#id10">floor_(name=None)</a></li> 
+      <li><a class="reference internal" href="#floor-divide-y-name-none">floor_divide(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#floor-mod-y-name-none">floor_mod(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#gather-index-axis-none-name-none">gather(index, axis=None, name=None)</a></li> 
+      <li><a class="reference internal" href="#gather-nd-index-name-none">gather_nd(index, name=None)</a></li> 
+      <li><a class="reference internal" href="#gcd-x-y-name-none">gcd(x, y, name=None)</a></li> 
+      <li><a class="reference internal" href="#gradient">gradient()</a></li> 
+      <li><a class="reference internal" href="#greater-equal-y-name-none">greater_equal(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#greater-than-y-name-none">greater_than(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#heaviside-y-name-none">heaviside(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#histogram-bins-100-min-0-max-0">histogram(bins=100, min=0, max=0)</a></li> 
+      <li><a class="reference internal" href="#imag-name-none">imag(name=None)</a></li> 
+      <li><a class="reference internal" href="#is-floating-point-x">is_floating_point(x)</a></li> 
+      <li><a class="reference internal" href="#increment-value-1-0-in-place-true">increment(value=1.0, in_place=True)</a></li> 
+      <li><a class="reference internal" href="#index-sample-index">index_sample(index)</a></li> 
+      <li><a class="reference internal" href="#index-select-index-axis-0-name-none">index_select(index, axis=0, name=None)</a></li> 
+      <li><a class="reference internal" href="#index-add-index-axis-value-name-none">index_add(index, axis, value, name=None)</a></li> 
+      <li><a class="reference internal" href="#index-put-indices-value-accumulate-false-name-none">index_put(indices, value, accumulate=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#repeat-interleave-repeats-axis-none-name-none">repeat_interleave(repeats, axis=None, name=None)</a></li> 
+      <li><a class="reference internal" href="#inv-name-none">inv(name=None)</a></li> 
+      <li><a class="reference internal" href="#is-empty-cond-none">is_empty(cond=None)</a></li> 
+      <li><a class="reference internal" href="#isfinite-name-none">isfinite(name=None)</a></li> 
+      <li><a class="reference internal" href="#isinf-name-none">isinf(name=None)</a></li> 
+      <li><a class="reference internal" href="#isnan-name-none">isnan(name=None)</a></li> 
+      <li><a class="reference internal" href="#kthvalue-k-axis-none-keepdim-false-name-none">kthvalue(k, axis=None, keepdim=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#kron-y-name-none">kron(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#lcm-x-y-name-none">lcm(x, y, name=None)</a></li> 
+      <li><a class="reference internal" href="#less-equal-y-name-none">less_equal(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#less-than-y-name-none">less_than(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#lgamma-name-none">lgamma(name=None)</a></li> 
+      <li><a class="reference internal" href="#log-name-none">log(name=None)</a></li> 
+      <li><a class="reference internal" href="#log10-name-none">log10(name=None)</a></li> 
+      <li><a class="reference internal" href="#log2-name-none">log2(name=None)</a></li> 
+      <li><a class="reference internal" href="#log1p-name-none">log1p(name=None)</a></li> 
+      <li><a class="reference internal" href="#logcumsumexp-x-axis-none-dtype-none-name-none">logcumsumexp(x, axis=None, dtype=None, name=None)</a></li> 
+      <li><a class="reference internal" href="#logical-and-y-out-none-name-none">logical_and(y, out=None, name=None)</a></li> 
+      <li><a class="reference internal" href="#logical-not-out-none-name-none">logical_not(out=None, name=None)</a></li> 
+      <li><a class="reference internal" href="#logical-or-y-out-none-name-none">logical_or(y, out=None, name=None)</a></li> 
+      <li><a class="reference internal" href="#logical-xor-y-out-none-name-none">logical_xor(y, out=None, name=None)</a></li> 
+      <li><a class="reference internal" href="#logsumexp-axis-none-keepdim-false-name-none">logsumexp(axis=None, keepdim=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#masked-select-mask-name-none">masked_select(mask, name=None)</a></li> 
+      <li><a class="reference internal" href="#matmul-y-transpose-x-false-transpose-y-false-name-none">matmul(y, transpose_x=False, transpose_y=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#matrix-power-x-n-name-none">matrix_power(x, n, name=None)</a></li> 
+      <li><a class="reference internal" href="#max-axis-none-keepdim-false-name-none">max(axis=None, keepdim=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#amax-axis-none-keepdim-false-name-none">amax(axis=None, keepdim=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#maximum-y-axis-1-name-none">maximum(y, axis=-1, name=None)</a></li> 
+      <li><a class="reference internal" href="#mean-axis-none-keepdim-false-name-none">mean(axis=None, keepdim=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#median-axis-none-keepdim-false-name-none">median(axis=None, keepdim=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#nanmedian-axis-none-keepdim-true-name-none">nanmedian(axis=None, keepdim=True, name=None)</a></li> 
+      <li><a class="reference internal" href="#min-axis-none-keepdim-false-name-none">min(axis=None, keepdim=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#amin-axis-none-keepdim-false-name-none">amin(axis=None, keepdim=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#minimum-y-axis-1-name-none">minimum(y, axis=-1, name=None)</a></li> 
+      <li><a class="reference internal" href="#mm-mat2-name-none">mm(mat2, name=None)</a></li> 
+      <li><a class="reference internal" href="#mod-y-name-none">mod(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#mode-axis-1-keepdim-false-name-none">mode(axis=-1, keepdim=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#multiplex-index">multiplex(index)</a></li> 
+      <li><a class="reference internal" href="#multiply-y-axis-1-name-none">multiply(y, axis=-1, name=None)</a></li> 
+      <li><a class="reference internal" href="#mv-vec-name-none">mv(vec, name=None)</a></li> 
+      <li><a class="reference internal" href="#nan-to-num">nan_to_num()</a></li> 
+      <li><a class="reference internal" href="#ndimension">ndimension()</a></li> 
+      <li><a class="reference internal" href="#neg-name-none">neg(name=None)</a></li> 
+      <li><a class="reference internal" href="#nonzero-as-tuple-false">nonzero(as_tuple=False)</a></li> 
+      <li><a class="reference internal" href="#norm-p-fro-axis-none-keepdim-false-name-none">norm(p=fro, axis=None, keepdim=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#not-equal-y-name-none">not_equal(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#numel-name-none">numel(name=None)</a></li> 
+      <li><a class="reference internal" href="#numpy">numpy()</a></li> 
+      <li><a class="reference internal" href="#pin-memory-y-name-none">pin_memory(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#pow-y-name-none">pow(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#prod-axis-none-keepdim-false-dtype-none-name-none">prod(axis=None, keepdim=False, dtype=None, name=None)</a></li> 
+      <li><a class="reference internal" href="#quantile-q-axis-none-keepdim-false-name-none">quantile(q, axis=None, keepdim=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#rad2deg-x-name-none">rad2deg(x, name=None)</a></li> 
+      <li><a class="reference internal" href="#rank">rank()</a></li> 
+      <li><a class="reference internal" href="#real-name-none">real(name=None)</a></li> 
+      <li><a class="reference internal" href="#reciprocal-name-none">reciprocal(name=None)</a></li> 
+      <li><a class="reference internal" href="#id11">reciprocal_(name=None)</a></li> 
+      <li><a class="reference internal" href="#register-hook-hook">register_hook(hook)</a></li> 
+      <li><a class="reference internal" href="#remainder-y-name-none">remainder(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#id12">remainder_(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#reshape-shape-name-none">reshape(shape, name=None)</a></li> 
+      <li><a class="reference internal" href="#id13">reshape_(shape, name=None)</a></li> 
+      <li><a class="reference internal" href="#reverse-axis-name-none">reverse(axis, name=None)</a></li> 
+      <li><a class="reference internal" href="#roll-shifts-axis-none-name-none">roll(shifts, axis=None, name=None)</a></li> 
+      <li><a class="reference internal" href="#round-name-none">round(name=None)</a></li> 
+      <li><a class="reference internal" href="#id14">round_(name=None)</a></li> 
+      <li><a class="reference internal" href="#rsqrt-name-none">rsqrt(name=None)</a></li> 
+      <li><a class="reference internal" href="#id15">rsqrt_(name=None)</a></li> 
+      <li><a class="reference internal" href="#scale-scale-1-0-bias-0-0-bias-after-scale-true-act-none-name-none">scale(scale=1.0, bias=0.0, bias_after_scale=True, act=None, name=None)</a></li> 
+      <li><a class="reference internal" href="#id16">scale_(scale=1.0, bias=0.0, bias_after_scale=True, act=None, name=None)</a></li> 
+      <li><a class="reference internal" href="#scatter-index-updates-overwrite-true-name-none">scatter(index, updates, overwrite=True, name=None)</a></li> 
+      <li><a class="reference internal" href="#id17">scatter_(index, updates, overwrite=True, name=None)</a></li> 
+      <li><a class="reference internal" href="#scatter-nd-updates-shape-name-none">scatter_nd(updates, shape, name=None)</a></li> 
+      <li><a class="reference internal" href="#scatter-nd-add-index-updates-name-none">scatter_nd_add(index, updates, name=None)</a></li> 
+      <li><a class="reference internal" href="#set-value-value">set_value(value)</a></li> 
+      <li><a class="reference internal" href="#shard-index-index-num-nshards-shard-id-ignore-value-1">shard_index(index_num, nshards, shard_id, ignore_value=-1)</a></li> 
+      <li><a class="reference internal" href="#sign-name-none">sign(name=None)</a></li> 
+      <li><a class="reference internal" href="#sgn-name-none">sgn(name=None)</a></li> 
+      <li><a class="reference internal" href="#sin-name-none">sin(name=None)</a></li> 
+      <li><a class="reference internal" href="#sinh-name-none">sinh(name=None)</a></li> 
+      <li><a class="reference internal" href="#size">size()</a></li> 
+      <li><a class="reference internal" href="#slice-axes-starts-ends">slice(axes, starts, ends)</a></li> 
+      <li><a class="reference internal" href="#sort-axis-1-descending-false-name-none">sort(axis=-1, descending=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#split-num-or-sections-axis-0-name-none">split(num_or_sections, axis=0, name=None)</a></li> 
+      <li><a class="reference internal" href="#vsplit-num-or-sections-name-none">vsplit(num_or_sections, name=None)</a></li> 
+      <li><a class="reference internal" href="#sqrt-name-none">sqrt(name=None)</a></li> 
+      <li><a class="reference internal" href="#id18">sqrt_(name=None)</a></li> 
+      <li><a class="reference internal" href="#square-name-none">square(name=None)</a></li> 
+      <li><a class="reference internal" href="#squeeze-axis-none-name-none">squeeze(axis=None, name=None)</a></li> 
+      <li><a class="reference internal" href="#id19">squeeze_(axis=None, name=None)</a></li> 
+      <li><a class="reference internal" href="#stack-axis-0-name-none">stack(axis=0, name=None)</a></li> 
+      <li><a class="reference internal" href="#stanh-scale-a-0-67-scale-b-1-7159-name-none">stanh(scale_a=0.67, scale_b=1.7159, name=None)</a></li> 
+      <li><a class="reference internal" href="#std-axis-none-unbiased-true-keepdim-false-name-none">std(axis=None, unbiased=True, keepdim=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#strided-slice-axes-starts-ends-strides">strided_slice(axes, starts, ends, strides)</a></li> 
+      <li><a class="reference internal" href="#subtract-y-name-none">subtract(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#id20">subtract_(y, name=None)</a></li> 
+      <li><a class="reference internal" href="#sum-axis-none-dtype-none-keepdim-false-name-none">sum(axis=None, dtype=None, keepdim=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#t-name-none">t(name=None)</a></li> 
+      <li><a class="reference internal" href="#tanh-name-none">tanh(name=None)</a></li> 
+      <li><a class="reference internal" href="#id21">tanh_(name=None)</a></li> 
+      <li><a class="reference internal" href="#tile-repeat-times-name-none">tile(repeat_times, name=None)</a></li> 
+      <li><a class="reference internal" href="#tolist">tolist()</a></li> 
+      <li><a class="reference internal" href="#topk-k-axis-none-largest-true-sorted-true-name-none">topk(k, axis=None, largest=True, sorted=True, name=None)</a></li> 
+      <li><a class="reference internal" href="#trace-offset-0-axis1-0-axis2-1-name-none">trace(offset=0, axis1=0, axis2=1, name=None)</a></li> 
+      <li><a class="reference internal" href="#transpose-perm-name-none">transpose(perm, name=None)</a></li> 
+      <li><a class="reference internal" href="#triangular-solve-b-upper-true-transpose-false-unitriangular-false-name-none">triangular_solve(b, upper=True, transpose=False, unitriangular=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#trunc-name-none">trunc(name=None)</a></li> 
+      <li><a class="reference internal" href="#frac-name-none">frac(name=None)</a></li> 
+      <li><a class="reference internal" href="#tensordot-y-axes-2-name-none">tensordot(y, axes=2, name=None)</a></li> 
+      <li><a class="reference internal" href="#unbind-axis-0">unbind(axis=0)</a></li> 
+      <li><a class="reference internal" href="#uniform-min-1-0-max-1-0-seed-0-name-none">uniform_(min=-1.0, max=1.0, seed=0, name=None)</a></li> 
+      <li><a class="reference internal" href="#unique-return-index-false-return-inverse-false-return-counts-false-axis-none-dtype-int64-name-none">unique(return_index=False, return_inverse=False, return_counts=False, axis=None, dtype=int64, name=None)</a></li> 
+      <li><a class="reference internal" href="#unsqueeze-axis-name-none">unsqueeze(axis, name=None)</a></li> 
+      <li><a class="reference internal" href="#id22">unsqueeze_(axis, name=None)</a></li> 
+      <li><a class="reference internal" href="#unstack-axis-0-num-none">unstack(axis=0, num=None)</a></li> 
+      <li><a class="reference internal" href="#var-axis-none-unbiased-true-keepdim-false-name-none">var(axis=None, unbiased=True, keepdim=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#where-x-y-name-none">where(x, y, name=None)</a></li> 
+      <li><a class="reference internal" href="#multi-dot-x-name-none">multi_dot(x, name=None)</a></li> 
+      <li><a class="reference internal" href="#solve-x-y-name-none">solve(x, y name=None)</a></li> 
+      <li><a class="reference internal" href="#logit-eps-none-name-none">logit(eps=None, name=None)</a></li> 
+      <li><a class="reference internal" href="#lerp-x-y-weight-name-none">lerp(x, y, weight, name=None)</a></li> 
+      <li><a class="reference internal" href="#lerp-y-weight-name-none">lerp_(y, weight, name=None)</a></li> 
+      <li><a class="reference internal" href="#is-complex">is_complex()</a></li> 
+      <li><a class="reference internal" href="#is-integer">is_integer()</a></li> 
+      <li><a class="reference internal" href="#take-along-axis-arr-index-axis">take_along_axis(arr, index, axis)</a></li> 
+      <li><a class="reference internal" href="#put-along-axis-arr-index-value-axis-reduce-assign">put_along_axis(arr, index, value, axis, reduce="assign")</a></li> 
+      <li><a class="reference internal" href="#erfinv-x-name-none">erfinv(x, name=None)</a></li> 
+      <li><a class="reference internal" href="#take-index-mode-raise-name-none">take(index, mode='raise', name=None)</a></li> 
+      <li><a class="reference internal" href="#frexp-x">frexp(x)</a></li> 
+      <li><a class="reference internal" href="#data-ptr">data_ptr()</a></li> 
+      <li><a class="reference internal" href="#trapezoid-y-x-none-dx-none-axis-1-name-none">trapezoid(y, x=None, dx=None, axis=-1, name=None)</a></li> 
+      <li><a class="reference internal" href="#cumulative-trapezoid-y-x-none-dx-none-axis-1-name-none">cumulative_trapezoid(y, x=None, dx=None, axis=-1, name=None)</a></li> 
+      <li><a class="reference internal" href="#polar-abs-angle">polar(abs, angle)</a></li> 
+      <li><a class="reference internal" href="#vander-x-n-none-increasing-false-name-none">vander(x, n=None, increasing=False, name=None)</a></li> 
+      <li><a class="reference internal" href="#unflatten-axis-shape-name-none">unflatten(axis, shape, name=None)</a></li> 
+      <li><a class="reference internal" href="#i0-x-name-none">i0(x, name=None)</a></li> 
+      <li><a class="reference internal" href="#i0e-x-name-none">i0e(x, name=None)</a></li> 
+      <li><a class="reference internal" href="#i1-x-name-none">i1(x, name=None)</a></li> 
+      <li><a class="reference internal" href="#i1e-x-name-none">i1e(x, name=None)</a></li> 
+      <li><a class="reference internal" href="#polygamma">polygamma</a></li> 
+      <li><a class="reference internal" href="#pca-lowrank-x-q-none-center-true-niter-2-name-none">pca_lowrank(x, q=None, center=True, niter=2, name=None)</a></li> 
+      <li><a class="reference internal" href="#cummax-x-axis-none-dtype-int64-name-none">cummax(x, axis=None, dtype='int64', name=None)</a></li> 
+      <li><a class="reference internal" href="#cummin-x-axis-none-dtype-int64-name-none">cummin(x, axis=None, dtype='int64', name=None)</a></li> 
+     </ul> </li> 
+   </ul> 
+  </div> 
+

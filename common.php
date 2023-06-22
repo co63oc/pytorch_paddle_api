@@ -54,13 +54,15 @@ function get_pytorch_url($api) {
 	return $url2;
 }
 
-function get_paddle_url($paddle_api) {
+function get_paddle_url($paddle_api, $index = "") {
 	$url2 = "";
 	$rst_file2 = "";
+    $paddle_api = str_replace("(x)", "", $paddle_api);
+    $paddle_api = preg_replace("|\(.*$|ims", "", $paddle_api);
 	$api_dir = str_replace(".", "/", $paddle_api);
 	if (strpos($paddle_api, "paddle.Tensor") === 0) {
-		$format_tensor = "https://www.paddlepaddle.org.cn/documentation/docs/zh/api/paddle/Tensor_cn.html#{api_name}";
-		$list_c = file_get_contents(ROOT . "/Tensor_cn.html");
+		$format_tensor = "https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/Tensor_cn.html#{api_name}";
+		$list_c = file_get_contents(ROOT . "/develop/Tensor_cn.html");
 
 		$api_name = str_replace("paddle.Tensor.", "", $paddle_api);
 		$api_name1 = str_replace("_", "-", $api_name);
@@ -73,15 +75,19 @@ function get_paddle_url($paddle_api) {
 		}
 		$rst_file2 = "docs/api/paddle/Tensor_cn.rst";
 	} else {
-		$format1 = "https://www.paddlepaddle.org.cn/documentation/docs/zh/api/{api_dir}_cn.html";
-		$rst_file = "docs/api/{api_dir}_cn.rst";
+		$format1 = "https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/{api_dir}_cn.html";
+		$rst_file_cn = "docs/api/{api_dir}_cn.rst";
+		$rst_file = "docs/api/{api_dir}.rst";
 		$url2 = str_replace("{api_dir}", $api_dir, $format1);
 		$rst_file2 = str_replace("{api_dir}", $api_dir, $rst_file);
-		if (!file_exists(PADDLE_DOC . $rst_file2)) {
+		$rst_file2_cn = str_replace("{api_dir}", $api_dir, $rst_file_cn);
+		if (!file_exists(PADDLE_DOC . $rst_file2) && !file_exists(PADDLE_DOC . $rst_file2_cn)) {
 			$url2 = "";
-			echo $i . "  ";
+			echo $index . "  ";
 			echo $paddle_api . " not exists\n";
 			$rst_file2 = "";
+		} else {
+			$rst_file2 = $rst_file2_cn;
 		}
 	}
 	return [$url2, $rst_file2];
