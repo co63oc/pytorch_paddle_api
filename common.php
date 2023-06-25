@@ -135,3 +135,38 @@ function get_git_doc($api) {
 	}
 	return $path2;
 }
+
+function in_id_list($i) {
+	$ignore_list = [
+		[1,3],
+		[5,29],
+		[35,46],
+		[48,85],
+		[94,96],
+		[98,111],
+		[122,125],
+		[185,192],
+		[198,200],
+		[209,214],
+		[240,242]
+	];
+
+
+		$in_ignore = false;
+		foreach ($ignore_list as $ignore) {
+			if (is_array($ignore)) {
+				if ($i >= $ignore[0] && $i <= $ignore[1]) {
+					$in_ignore = true;
+					break;
+				}
+			} else {
+				if ($i == $ignore) {
+					$in_ignore = true;
+					break;
+				}
+			}
+		}
+
+		return $in_ignore;
+}
+

@@ -34,6 +34,9 @@ echo "| pytorch | paddle |\n";
 echo "| - | - |\n";
 
 foreach ($pytorch_data as $k => $v) {
+	if (in_id_list($k)) {
+		continue;
+	}
 	if (!empty($v[2])) {
 		$str2 = sprintf(" [%s](%s)", $v[2], $v['url2'][0]);
 	} else {
