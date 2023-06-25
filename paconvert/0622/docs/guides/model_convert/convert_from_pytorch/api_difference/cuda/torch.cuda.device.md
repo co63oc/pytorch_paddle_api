@@ -1,34 +1,21 @@
-## [xxx 参数更多]torch.cuda.device
+## [参数不一致]torch.cuda.device
 
 ### [torch.cuda.device](https://pytorch.org/docs/1.13/generated/torch.cuda.device.html#torch.cuda.device)
 
 ```python
-torch.cuda.device(xxx)
+torch.cuda.device(device)
 ```
 
 ### [paddle.CUDAPlace](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/CUDAPlace_cn.html)
 
 ```python
-paddle.CUDAPlace(xxx)
+paddle.CUDAPlace(id)
 ```
 
-其中 xxx 相比 xxx 支持更多其他参数，具体如下：
+其中 Pytorch 与 Paddle 的参数类型不一致，具体如下：
 
 ### 参数映射
 
-| PyTorch | PaddlePaddle | 备注 |
-| ------- | ------------ | ---- |
-|    -    |    xxx    | 表示xxx，PyTorch 无此参数，Paddle 保持默认即可。 |
-
-### 转写示例
-
-#### xxx 参数：xxx
-``` python
-# PyTorch 写法:
-xxx
-
-# Paddle 写法:
-xxx
-
-# 注：xxx
-```
+| PyTorch | PaddlePaddle | 备注                                     |
+| ------- | ------------ | ---------------------------------------- |
+| device  | id           | PyTorch 比 Paddle 多 torch.device 类型。 |
