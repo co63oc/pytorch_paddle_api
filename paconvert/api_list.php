@@ -30,8 +30,8 @@ foreach ($list1 as $v) {
 	// print_r($pytorch_data[$v]);
 }
 
-echo "| pytorch | paddle |\n";
-echo "| - | - |\n";
+echo "| pytorch | paddle | 有文档 |\n";
+echo "| - | - | - |\n";
 
 foreach ($pytorch_data as $k => $v) {
 	if (in_id_list($k)) {
@@ -42,5 +42,9 @@ foreach ($pytorch_data as $k => $v) {
 	} else {
 		$str2 = "";
 	}
-	echo sprintf("| [%03d %s](%s) | %s |\n", $v[0], $v[1], $v['url'], $str2);
+    $has_doc = get_git_doc($v[1]);
+	if (empty($has_doc) || !file_exists(PADDLE_DOC . $has_doc)) {
+		$has_doc = "";
+	}
+	echo sprintf("| [%03d %s](%s) | %s | %s |\n", $v[0], $v[1], $v['url'], $str2, $has_doc);
 }
