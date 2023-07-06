@@ -30,11 +30,11 @@
 | [117 torch.autograd.functional.hessian](https://pytorch.org/docs/1.13/generated/torch.autograd.functional.hessian.html#torch.autograd.functional.hessian) |  [paddle.incubate.autograd.Hessian](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/incubate/autograd/Hessian_cn.html) | docs/guides/model_convert/convert_from_pytorch/api_difference/others/torch.autograd.functional.hessian.md |
 | [118 torch.autograd.functional.vjp](https://pytorch.org/docs/1.13/generated/torch.autograd.functional.vjp.html#torch.autograd.functional.vjp) |  [paddle.incubate.autograd.vjp](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/incubate/autograd/vjp_cn.html) | docs/guides/model_convert/convert_from_pytorch/api_difference/others/torch.autograd.functional.vjp.md |
 | [119 torch.autograd.functional.jvp](https://pytorch.org/docs/1.13/generated/torch.autograd.functional.jvp.html#torch.autograd.functional.jvp) |  [paddle.incubate.autograd.jvp](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/incubate/autograd/jvp_cn.html) | docs/guides/model_convert/convert_from_pytorch/api_difference/others/torch.autograd.functional.jvp.md |
-| [120 torch.cuda.device](https://pytorch.org/docs/1.13/generated/torch.cuda.device.html#torch.cuda.device) |  [paddle.CUDAPlace](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/CUDAPlace_cn.html) |  |
+| [120 torch.cuda.device](https://pytorch.org/docs/1.13/generated/torch.cuda.device.html#torch.cuda.device) |  [paddle.CUDAPlace](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/CUDAPlace_cn.html) | docs/guides/model_convert/convert_from_pytorch/api_difference/cuda/torch.cuda.device.md |
 | [121 torch.cuda.default_stream](https://pytorch.org/docs/1.13/generated/torch.cuda.default_stream.html#torch.cuda.default_stream) |  |  |
-| [126 torch.cuda.get_rng_state_all](https://pytorch.org/docs/1.13/generated/torch.cuda.get_rng_state_all.html#torch.cuda.get_rng_state_all) |  [paddle.get_cuda_rng_state](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/get_cuda_rng_state_cn.html) |  |
+| [126 torch.cuda.get_rng_state_all](https://pytorch.org/docs/1.13/generated/torch.cuda.get_rng_state_all.html#torch.cuda.get_rng_state_all) |  [paddle.get_cuda_rng_state](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/get_cuda_rng_state_cn.html) | docs/guides/model_convert/convert_from_pytorch/api_difference/cuda/torch.cuda.get_rng_state_all.md |
 | [127 torch.cuda.set_rng_state](https://pytorch.org/docs/1.13/generated/torch.cuda.set_rng_state.html#torch.cuda.set_rng_state) |  [paddle.set_cuda_rng_state](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/set_cuda_rng_state_cn.html) |  |
-| [128 torch.cuda.set_rng_state_all](https://pytorch.org/docs/1.13/generated/torch.cuda.set_rng_state_all.html#torch.cuda.set_rng_state_all) |  [paddle.set_cuda_rng_state](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/set_cuda_rng_state_cn.html) |  |
+| [128 torch.cuda.set_rng_state_all](https://pytorch.org/docs/1.13/generated/torch.cuda.set_rng_state_all.html#torch.cuda.set_rng_state_all) |  [paddle.set_cuda_rng_state](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/set_cuda_rng_state_cn.html) | docs/guides/model_convert/convert_from_pytorch/api_difference/cuda/torch.cuda.set_rng_state_all.md |
 | [129 torch.cuda.manual_seed_all](https://pytorch.org/docs/1.13/generated/torch.cuda.manual_seed_all.html#torch.cuda.manual_seed_all) |  |  |
 | [130 torch.cuda.seed](https://pytorch.org/docs/1.13/generated/torch.cuda.seed.html#torch.cuda.seed) |  |  |
 | [131 torch.cuda.seed_all](https://pytorch.org/docs/1.13/generated/torch.cuda.seed_all.html#torch.cuda.seed_all) |  |  |
@@ -90,16 +90,16 @@
 | [181 torch.distributions.transformed_distribution.TransformedDistribution](https://pytorch.org/docs/1.13/distributions.html#torch.distributions.transformed_distribution.TransformedDistribution) |  |  |
 | [182 torch.distributions.uniform.Uniform](https://pytorch.org/docs/1.13/distributions.html#torch.distributions.uniform.Uniform) |  [paddle.distribution.Uniform](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/distribution/Uniform_cn.html) | docs/guides/model_convert/convert_from_pytorch/api_difference/distributions/torch.distributions.uniform.Uniform.md |
 | [183 torch.distributions.transforms.Transform](https://pytorch.org/docs/1.13/distributions.html#torch.distributions.transforms.Transform) |  |  |
-| [184 torch.distributions.transforms.ComposeTransform](https://pytorch.org/docs/1.13/distributions.html#torch.distributions.transforms.ComposeTransform) |  [paddle.distribution.ChainTransform](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/distribution/ChainTransform_cn.html) |  |
+| [184 torch.distributions.transforms.ComposeTransform](https://pytorch.org/docs/1.13/distributions.html#torch.distributions.transforms.ComposeTransform) |  [paddle.distribution.ChainTransform](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/distribution/ChainTransform_cn.html) | docs/guides/model_convert/convert_from_pytorch/api_difference/distributions/torch.distributions.transforms.ComposeTransform.md |
 | [193 torch.distributions.transforms.SoftmaxTransform](https://pytorch.org/docs/1.13/distributions.html#torch.distributions.transforms.SoftmaxTransform) |  [paddle.distribution.SoftmaxTransform](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/distribution/SoftmaxTransform_cn.html) |  |
 | [194 torch.distributions.transforms.StickBreakingTransform](https://pytorch.org/docs/1.13/distributions.html#torch.distributions.transforms.StickBreakingTransform) |  [paddle.distribution.StickBreakingTransform](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/distribution/StickBreakingTransform_cn.html) |  |
 | [195 torch.distributions.transforms.StackTransform](https://pytorch.org/docs/1.13/distributions.html#torch.distributions.transforms.StackTransform) |  [paddle.distribution.StackTransform](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/distribution/StackTransform_cn.html) |  |
 | [196 torch.distributions.constraints.Constraint](https://pytorch.org/docs/1.13/distributions.html#torch.distributions.constraints.Constraint) |  |  |
 | [197 torch.distributions.constraint_registry.ConstraintRegistry](https://pytorch.org/docs/1.13/distributions.html#torch.distributions.constraint_registry.ConstraintRegistry) |  |  |
-| [201 torch.hub.list](https://pytorch.org/docs/1.13/hub.html#torch.hub.list) |  [paddle.hub.list](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/hub/list_cn.html) |  |
-| [202 torch.hub.help](https://pytorch.org/docs/1.13/hub.html#torch.hub.help) |  [paddle.hub.help](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/hub/help_cn.html) |  |
-| [203 torch.hub.load](https://pytorch.org/docs/1.13/hub.html#torch.hub.load) |  [paddle.hub.load](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/hub/load_cn.html) |  |
-| [204 torch.hub.download_url_to_file](https://pytorch.org/docs/1.13/hub.html#torch.hub.download_url_to_file) |  [paddle.utils.download.get_weights_path_from_url](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/utils/download/get_weights_path_from_url_cn.html) |  |
+| [201 torch.hub.list](https://pytorch.org/docs/1.13/hub.html#torch.hub.list) |  [paddle.hub.list](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/hub/list_cn.html) | docs/guides/model_convert/convert_from_pytorch/api_difference/hub/torch.hub.list.md |
+| [202 torch.hub.help](https://pytorch.org/docs/1.13/hub.html#torch.hub.help) |  [paddle.hub.help](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/hub/help_cn.html) | docs/guides/model_convert/convert_from_pytorch/api_difference/hub/torch.hub.help.md |
+| [203 torch.hub.load](https://pytorch.org/docs/1.13/hub.html#torch.hub.load) |  [paddle.hub.load](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/hub/load_cn.html) | docs/guides/model_convert/convert_from_pytorch/api_difference/hub/torch.hub.load.md |
+| [204 torch.hub.download_url_to_file](https://pytorch.org/docs/1.13/hub.html#torch.hub.download_url_to_file) |  [paddle.utils.download.get_weights_path_from_url](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/utils/download/get_weights_path_from_url_cn.html) | docs/guides/model_convert/convert_from_pytorch/api_difference/hub/torch.hub.download_url_to_file.md |
 | [205 torch.hub.get_dir](https://pytorch.org/docs/1.13/hub.html#torch.hub.get_dir) |  |  |
 | [206 torch.hub.set_dir](https://pytorch.org/docs/1.13/hub.html#torch.hub.set_dir) |  |  |
 | [207 torch.jit.trace_module](https://pytorch.org/docs/1.13/generated/torch.jit.trace_module.html#torch.jit.trace_module) |  |  |
@@ -107,8 +107,8 @@
 | [215 torch.linalg.tensorsolve](https://pytorch.org/docs/1.13/generated/torch.linalg.tensorsolve.html#torch.linalg.tensorsolve) |  |  |
 | [216 torch.linalg.inv](https://pytorch.org/docs/1.13/generated/torch.linalg.inv.html#torch.linalg.inv) |  [paddle.linalg.inv](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/linalg/inv_cn.html) | docs/guides/model_convert/convert_from_pytorch/api_difference/linalg/torch.linalg.inv.md |
 | [217 torch.linalg.qr](https://pytorch.org/docs/1.13/generated/torch.linalg.qr.html#torch.linalg.qr) |  [paddle.linalg.qr](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/linalg/qr_cn.html) | docs/guides/model_convert/convert_from_pytorch/api_difference/linalg/torch.linalg.qr.md |
-| [218 torch.profiler.profile](https://pytorch.org/docs/1.13/profiler.html#torch.profiler.profile) |  [paddle.utils.profiler.profiler]() |  |
-| [219 torch.profiler.schedule](https://pytorch.org/docs/1.13/profiler.html#torch.profiler.schedule) |  [paddle.profiler.make_scheduler](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/profiler/make_scheduler_cn.html) |  |
+| [218 torch.profiler.profile](https://pytorch.org/docs/1.13/profiler.html#torch.profiler.profile) |  [paddle.utils.profiler.profiler]() | docs/guides/model_convert/convert_from_pytorch/api_difference/others/torch.profiler.profile.md |
+| [219 torch.profiler.schedule](https://pytorch.org/docs/1.13/profiler.html#torch.profiler.schedule) |  [paddle.profiler.make_scheduler](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/profiler/make_scheduler_cn.html) | docs/guides/model_convert/convert_from_pytorch/api_difference/others/torch.profiler.schedule.md |
 | [220 torch.nn.init.calculate_gain](https://pytorch.org/docs/1.13/nn.init.html#torch.nn.init.calculate_gain) |  [paddle.nn.initializer.calculate_gain](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/nn/initializer/calculate_gain_cn.html) | docs/guides/model_convert/convert_from_pytorch/api_difference/init/torch.nn.init.calculate_gain.md |
 | [221 torch.distributed.rpc.WorkerInfo](https://pytorch.org/docs/1.13/distributed.html#torch.distributed.rpc.WorkerInfo) |  |  |
 | [222 torch.distributed.rpc.rpc_sync](https://pytorch.org/docs/1.13/distributed.html#torch.distributed.rpc.rpc_sync) |  |  |
@@ -123,10 +123,10 @@
 | [231 torch.utils.cpp_extension.load](https://pytorch.org/docs/1.13/cpp_extension.html#torch.utils.cpp_extension.load) |  [paddle.utils.cpp_extension.load](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/utils/cpp_extension/load_cn.html) | docs/guides/model_convert/convert_from_pytorch/api_difference/utils/torch.utils.cpp_extension.load.md |
 | [232 torch.utils.cpp_extension.load_inline](https://pytorch.org/docs/1.13/cpp_extension.html#torch.utils.cpp_extension.load_inline) |  |  |
 | [233 torch.utils.cpp_extension.include_paths](https://pytorch.org/docs/1.13/cpp_extension.html#torch.utils.cpp_extension.include_paths) |  |  |
-| [234 torch.utils.data.TensorDataset](https://pytorch.org/docs/1.13/data.html#torch.utils.data.TensorDataset) |  [paddle.io.TensorDataset](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/io/TensorDataset_cn.html) |  |
+| [234 torch.utils.data.TensorDataset](https://pytorch.org/docs/1.13/data.html#torch.utils.data.TensorDataset) |  [paddle.io.TensorDataset](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/io/TensorDataset_cn.html) | docs/guides/model_convert/convert_from_pytorch/api_difference/utils/torch.utils.data.TensorDataset.md |
 | [235 torch.utils.data.ConcatDataset](https://pytorch.org/docs/1.13/data.html#torch.utils.data.ConcatDataset) |  [paddle.io.ComposeDataset](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/io/ComposeDataset_cn.html) |  |
-| [236 torch.utils.data.ChainDataset](https://pytorch.org/docs/1.13/data.html#torch.utils.data.ChainDataset) |  [paddle.io.ChainDataset](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/io/ChainDataset_cn.html) |  |
-| [237 torch.utils.data.Subset](https://pytorch.org/docs/1.13/data.html#torch.utils.data.Subset) |  [paddle.io.Subset](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/io/Subset_cn.html) |  |
+| [236 torch.utils.data.ChainDataset](https://pytorch.org/docs/1.13/data.html#torch.utils.data.ChainDataset) |  [paddle.io.ChainDataset](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/io/ChainDataset_cn.html) | docs/guides/model_convert/convert_from_pytorch/api_difference/utils/torch.utils.data.ChainDataset.md |
+| [237 torch.utils.data.Subset](https://pytorch.org/docs/1.13/data.html#torch.utils.data.Subset) |  [paddle.io.Subset](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/io/Subset_cn.html) | docs/guides/model_convert/convert_from_pytorch/api_difference/utils/torch.utils.data.Subset.md |
 | [238 torch.utils.data.SubsetRandomSampler](https://pytorch.org/docs/1.13/data.html#torch.utils.data.SubsetRandomSampler) |  |  |
 | [239 torch.utils.data.get_worker_info](https://pytorch.org/docs/1.13/data.html#torch.utils.data.get_worker_info) |  [paddle.io.get_worker_info](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/io/get_worker_info_cn.html) |  |
 | [243 torch.linalg.inv_ex](https://pytorch.org/docs/1.13/generated/torch.linalg.inv_ex.html#torch.linalg.inv_ex) |  |  |
@@ -250,7 +250,7 @@
 | [361 torch.linalg.lu_factor_ex](https://pytorch.org/docs/1.13/generated/torch.linalg.lu_factor_ex.html#torch.linalg.lu_factor_ex) |  |  |
 | [362 torch.special.softmax](https://pytorch.org/docs/1.13/special.html#torch.special.softmax) |  [paddle.nn.functional.softmax](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/nn/functional/softmax_cn.html) |  |
 | [363 torch.sparse.sampled_addmm](https://pytorch.org/docs/1.13/generated/torch.sparse.sampled_addmm.html#torch.sparse.sampled_addmm) |  |  |
-| [364 torch.utils.data.default_collate](https://pytorch.org/docs/1.13/data.html#torch.utils.data.default_collate) |  |  |
+| [364 torch.utils.data.default_collate](https://pytorch.org/docs/1.13/data.html#torch.utils.data.default_collate) |  | docs/guides/model_convert/convert_from_pytorch/api_difference/utils/torch.utils.data.default_collate.md |
 | [365 torch.utils.data.default_convert](https://pytorch.org/docs/1.13/data.html#torch.utils.data.default_convert) |  |  |
 | [366 torch.from_dlpack](https://pytorch.org/docs/1.13/generated/torch.from_dlpack.html#torch.from_dlpack) |  [paddle.utils.dlpack.from_dlpack](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/utils/dlpack/from_dlpack_cn.html) |  |
 | [367 torch.index_copy](https://pytorch.org/docs/1.13/generated/torch.index_copy.html#torch.index_copy) |  [paddle.scatter](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/scatter_cn.html) |  |
@@ -270,24 +270,24 @@
 | [381 torch.onnx.disable_log](https://pytorch.org/docs/1.13/onnx.html#torch.onnx.disable_log) |  |  |
 | [382 torch.cuda.amp.autocast_mode.autocast](https://pytorch.org/docs/1.13/amp.html#torch.cuda.amp.autocast_mode.autocast) |  |  |
 | [383 torch.nn.modules.Module](https://pytorch.org/docs/1.13/generated/torch.nn.modules.Module.html#torch.nn.modules.Module) |  |  |
-| [384 torch.nn.Module.register_parameter](https://pytorch.org/docs/1.13/generated/torch.nn.Module.register_parameter.html#torch.nn.Module.register_parameter) |  |  |
-| [385 torch.nn.Module.get_submodule](https://pytorch.org/docs/1.13/generated/torch.nn.Module.get_submodule.html#torch.nn.Module.get_submodule) |  |  |
-| [386 torch.nn.Module.get_parameter](https://pytorch.org/docs/1.13/generated/torch.nn.Module.get_parameter.html#torch.nn.Module.get_parameter) |  |  |
-| [387 torch.nn.Module.get_buffer](https://pytorch.org/docs/1.13/generated/torch.nn.Module.get_buffer.html#torch.nn.Module.get_buffer) |  |  |
-| [388 torch.nn.Module.cuda](https://pytorch.org/docs/1.13/generated/torch.nn.Module.cuda.html#torch.nn.Module.cuda) |  |  |
-| [389 torch.nn.Module.xpu](https://pytorch.org/docs/1.13/generated/torch.nn.Module.xpu.html#torch.nn.Module.xpu) |  |  |
-| [390 torch.nn.Module.cpu](https://pytorch.org/docs/1.13/generated/torch.nn.Module.cpu.html#torch.nn.Module.cpu) |  |  |
-| [391 torch.nn.Module.type](https://pytorch.org/docs/1.13/generated/torch.nn.Module.type.html#torch.nn.Module.type) |  |  |
-| [392 torch.nn.Module.float](https://pytorch.org/docs/1.13/generated/torch.nn.Module.float.html#torch.nn.Module.float) |  |  |
-| [393 torch.nn.Module.double](https://pytorch.org/docs/1.13/generated/torch.nn.Module.double.html#torch.nn.Module.double) |  |  |
-| [394 torch.nn.Module.half](https://pytorch.org/docs/1.13/generated/torch.nn.Module.half.html#torch.nn.Module.half) |  |  |
-| [395 torch.nn.Module.bfloat16](https://pytorch.org/docs/1.13/generated/torch.nn.Module.bfloat16.html#torch.nn.Module.bfloat16) |  |  |
-| [396 torch.nn.Module.to_empty](https://pytorch.org/docs/1.13/generated/torch.nn.Module.to_empty.html#torch.nn.Module.to_empty) |  |  |
-| [397 torch.nn.Module.to](https://pytorch.org/docs/1.13/generated/torch.nn.Module.to.html#torch.nn.Module.to) |  |  |
-| [398 torch.nn.Module.register_full_backward_pre_hook](https://pytorch.org/docs/1.13/generated/torch.nn.Module.register_full_backward_pre_hook.html#torch.nn.Module.register_full_backward_pre_hook) |  |  |
-| [399 torch.nn.Module.register_full_backward_hook](https://pytorch.org/docs/1.13/generated/torch.nn.Module.register_full_backward_hook.html#torch.nn.Module.register_full_backward_hook) |  |  |
-| [400 torch.nn.Module.requires_grad_](https://pytorch.org/docs/1.13/generated/torch.nn.Module.requires_grad_.html#torch.nn.Module.requires_grad_) |  |  |
-| [401 torch.nn.Module.zero_grad](https://pytorch.org/docs/1.13/generated/torch.nn.Module.zero_grad.html#torch.nn.Module.zero_grad) |  [paddle.nn.Layer.clear_grad]() |  |
+| [384 torch.nn.Module.register_parameter](https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.register_parameter) |  |  |
+| [385 torch.nn.Module.get_submodule](https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.get_submodule) |  |  |
+| [386 torch.nn.Module.get_parameter](https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.get_parameter) |  |  |
+| [387 torch.nn.Module.get_buffer](https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.get_buffer) |  |  |
+| [388 torch.nn.Module.cuda](https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.cuda) |  |  |
+| [389 torch.nn.Module.xpu](https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.xpu) |  |  |
+| [390 torch.nn.Module.cpu](https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.cpu) |  |  |
+| [391 torch.nn.Module.type](https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.type) |  |  |
+| [392 torch.nn.Module.float](https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.float) |  |  |
+| [393 torch.nn.Module.double](https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.double) |  |  |
+| [394 torch.nn.Module.half](https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.half) |  |  |
+| [395 torch.nn.Module.bfloat16](https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.bfloat16) |  |  |
+| [396 torch.nn.Module.to_empty](https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.to_empty) |  |  |
+| [397 torch.nn.Module.to](https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.to) |  |  |
+| [398 torch.nn.Module.register_full_backward_pre_hook](https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.register_full_backward_pre_hook) |  |  |
+| [399 torch.nn.Module.register_full_backward_hook](https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.register_full_backward_hook) |  |  |
+| [400 torch.nn.Module.requires_grad_](https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.requires_grad_) |  |  |
+| [401 torch.nn.Module.zero_grad](https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.zero_grad) |  [paddle.nn.Layer.clear_grad]() |  |
 | [402 torch.HalfTensor](https://pytorch.org/docs/1.13/generated/torch.HalfTensor.html#torch.HalfTensor) |  |  |
 | [403 torch.cuda.HalfTensor](https://pytorch.org/docs/1.13/generated/torch.cuda.HalfTensor.html#torch.cuda.HalfTensor) |  |  |
 | [404 torch.ShortTensor](https://pytorch.org/docs/1.13/generated/torch.ShortTensor.html#torch.ShortTensor) |  |  |
