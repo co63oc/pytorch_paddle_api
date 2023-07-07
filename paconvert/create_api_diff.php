@@ -1,7 +1,7 @@
 <?php
 include_once dirname(__FILE__) . "/../common.php";
-define("NEW_DOC_DIR", '0622/');
-define("EXIST", 'exist_0622.md');
+define("NEW_DOC_DIR", '0708/');
+define("EXIST", 'exist_0708.md');
 
 global $pytorch_data;
 global $paddle_data;
@@ -202,7 +202,11 @@ function show_group($group_id, $api_list = []) {
 	echo "\n";
 	for ($i = $start; $i <= $end; $i++) {
 		if (empty($paddle_data[$i])) {
-			continue;
+			//continue;
+			$paddle_data[$i] = [
+				'api' => '',
+				'url' => '',
+			];
 		}
 		if (!empty($api_list) && !in_array($i, $api_list)) {
             continue;
@@ -239,9 +243,10 @@ function show_group($group_id, $api_list = []) {
 
 $api_list = [
 //92, 93, 
-114,115,116,117,118,119,120,
+//114,115,116,117,118,119,120,
 //147,148,149,150, 152, 155, 158,
 //216, 217, 228, 229, 258
+388,389,390,205,206
 ];
 show_group(0, $api_list);
 
