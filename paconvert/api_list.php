@@ -42,9 +42,13 @@ foreach ($pytorch_data as $k => $v) {
 	} else {
 		$str2 = "";
 	}
+    $c_mapping = file_get_contents(PADDLE_DOC . "docs/guides/model_convert/convert_from_pytorch/pytorch_api_mapping_cn.md");
     $has_doc = get_git_doc($v[1]);
 	if (empty($has_doc) || !file_exists(PADDLE_DOC . $has_doc)) {
 		$has_doc = "";
+		if (strpos($c_mapping, "[" . $v[1] . "]") !== false) {
+			$has_doc = "in mapping";
+		}
 	}
 	echo sprintf("| [%03d %s](%s) | %s | %s |\n", $v[0], $v[1], $v['url'], $str2, $has_doc);
 }

@@ -1,7 +1,7 @@
 <?php
 include_once dirname(__FILE__) . "/../common.php";
-define("NEW_DOC_DIR", '0708/');
-define("EXIST", 'exist_0708.md');
+define("NEW_DOC_DIR", 'lstsq/');
+define("EXIST", 'exist_lstsq.md');
 
 global $pytorch_data;
 global $paddle_data;
@@ -246,7 +246,14 @@ $api_list = [
 //114,115,116,117,118,119,120,
 //147,148,149,150, 152, 155, 158,
 //216, 217, 228, 229, 258
-388,389,390
+//388,389,390
+//299, 305, 316, 317, 319
+//193,194,195
+//263, 264, 274
+//141, 142
+//258
+//87, 92, 93
+285
 ];
 show_group(0, $api_list);
 
