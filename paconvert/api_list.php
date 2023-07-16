@@ -30,8 +30,8 @@ foreach ($list1 as $v) {
 	// print_r($pytorch_data[$v]);
 }
 
-echo "| pytorch | paddle | 有文档 |\n";
-echo "| - | - | - |\n";
+echo "| pytorch | paddle | 有文档 | 有测试 |\n";
+echo "| - | - | - | - |\n";
 
 foreach ($pytorch_data as $k => $v) {
 	if (in_id_list($k)) {
@@ -50,5 +50,14 @@ foreach ($pytorch_data as $k => $v) {
 			$has_doc = "in mapping";
 		}
 	}
-	echo sprintf("| [%03d %s](%s) | %s | %s |\n", $v[0], $v[1], $v['url'], $str2, $has_doc);
+    $api = $v[1];
+    $test_name = str_replace("torch.", "", $api);
+    $test_name = str_replace(".", "_", $test_name);
+    $test_file = sprintf("/data/PaConvert/tests/test_%s.py", $test_name);
+    $has_test = "";
+	if (file_exists($test_file)) {
+		$has_test = "in test";
+        continue;
+	}
+	echo sprintf("| [%03d %s](%s) | %s | %s | %s |\n", $v[0], $v[1], $v['url'], $str2, $has_doc, $has_test);
 }
