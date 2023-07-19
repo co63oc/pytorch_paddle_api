@@ -3,39 +3,39 @@ define("ROOT", dirname(__FILE__));
 define("PADDLE_DOC", '/data/docs/');
 
 function get_pytorch_url($api) {
-	$format1 = "https://pytorch.org/docs/1.13/generated/{api}.html#{api}";
+	$format1 = "https://pytorch.org/docs/stable/generated/{api}.html#{api}";
 	$url_map1 = [
-		"torch.nn.functional" => "https://pytorch.org/docs/1.13/generated/{api}.html#{api}",
-		"torch.Tensor" => "https://pytorch.org/docs/1.13/generated/{api}.html#{api}",
-		"torch.cuda.amp" => "https://pytorch.org/docs/1.13/amp.html#{api}",
-		"torch.cuda" => "https://pytorch.org/docs/1.13/generated/{api}.html#{api}",
-		"torch.backends" => "https://pytorch.org/docs/1.13/backends.html#{api}",
-		"torch.distributed" => "https://pytorch.org/docs/1.13/distributed.html#{api}",
-		"torch.distributions" => "https://pytorch.org/docs/1.13/distributions.html#{api}",
+		"torch.nn.functional" => "https://pytorch.org/docs/stable/generated/{api}.html#{api}",
+		"torch.Tensor" => "https://pytorch.org/docs/stable/generated/{api}.html#{api}",
+		"torch.cuda.amp" => "https://pytorch.org/docs/stable/amp.html#{api}",
+		"torch.cuda" => "https://pytorch.org/docs/stable/generated/{api}.html#{api}",
+		"torch.backends" => "https://pytorch.org/docs/stable/backends.html#{api}",
+		"torch.distributed" => "https://pytorch.org/docs/stable/distributed.html#{api}",
+		"torch.distributions" => "https://pytorch.org/docs/stable/distributions.html#{api}",
 		"torch.fft" => $format1,
 		"torch.linalg" => $format1,
-		"torch.nn.init" => "https://pytorch.org/docs/1.13/nn.init.html#{api}",
-		"torch.random" => "https://pytorch.org/docs/1.13/random.html#{api}",
-		"torch.special" => "https://pytorch.org/docs/1.13/special.html#{api}",
+		"torch.nn.init" => "https://pytorch.org/docs/stable/nn.init.html#{api}",
+		"torch.random" => "https://pytorch.org/docs/stable/random.html#{api}",
+		"torch.special" => "https://pytorch.org/docs/stable/special.html#{api}",
 		"torch.nn.Module" => "https://pytorch.org/docs/stable/generated/torch.nn.Module.html#{api}",
 		"torch.optim" => $format1,
 		"torch.sparse" => $format1,
-		"torch.utils.benchmark" => "https://pytorch.org/docs/1.13/benchmark_utils.html#{api}",
-		"torch.utils.bottleneck" => "https://pytorch.org/docs/1.13/bottleneck.html#{api}",
-		"torch.utils.checkpoint" => "https://pytorch.org/docs/1.13/checkpoint.html#{api}",
-		"torch.utils.cpp_extension" => "https://pytorch.org/docs/1.13/cpp_extension.html#{api}",
-		"torch.utils.data" => "https://pytorch.org/docs/1.13/data.html#{api}",
-		"torch.utils.dlpack" => "https://pytorch.org/docs/1.13/dlpack.html#{api}",
-		"torch.utils.mobile_optimizer" => "https://pytorch.org/docs/1.13/mobile_optimizer.html#{api}",
-		"torch.utils.model_zoo" => "https://pytorch.org/docs/1.13/model_zoo.html#{api}",
-		"torch.utils.tensorboard" => "https://pytorch.org/docs/1.13/tensorboard.html#{api}",
+		"torch.utils.benchmark" => "https://pytorch.org/docs/stable/benchmark_utils.html#{api}",
+		"torch.utils.bottleneck" => "https://pytorch.org/docs/stable/bottleneck.html#{api}",
+		"torch.utils.checkpoint" => "https://pytorch.org/docs/stable/checkpoint.html#{api}",
+		"torch.utils.cpp_extension" => "https://pytorch.org/docs/stable/cpp_extension.html#{api}",
+		"torch.utils.data" => "https://pytorch.org/docs/stable/data.html#{api}",
+		"torch.utils.dlpack" => "https://pytorch.org/docs/stable/dlpack.html#{api}",
+		"torch.utils.mobile_optimizer" => "https://pytorch.org/docs/stable/mobile_optimizer.html#{api}",
+		"torch.utils.model_zoo" => "https://pytorch.org/docs/stable/model_zoo.html#{api}",
+		"torch.utils.tensorboard" => "https://pytorch.org/docs/stable/tensorboard.html#{api}",
 		"torch.nn.utils" => $format1,
 		"torch.nn." => $format1,
 		"torch.autograd." => $format1,
-		"torch.hub." => "https://pytorch.org/docs/1.13/hub.html#{api}",
+		"torch.hub." => "https://pytorch.org/docs/stable/hub.html#{api}",
 		"torch.jit." => $format1,
-		"torch.profiler." => "https://pytorch.org/docs/1.13/profiler.html#{api}",
-		"torch.onnx." => "https://pytorch.org/docs/1.13/onnx.html#{api}",
+		"torch.profiler." => "https://pytorch.org/docs/stable/profiler.html#{api}",
+		"torch.onnx." => "https://pytorch.org/docs/stable/onnx.html#{api}",
 		];
 
 	$url2 = "";
@@ -99,6 +99,9 @@ function get_git_doc($api) {
 	$map1 = [
 		"torch.nn.functional" => "functional",
 		"torch.Tensor" => "Tensor",
+		"torch.HalfTensor" => "Tensor",
+		"torch.ShortTensor" => "Tensor",
+		"torch.DoubleTensor" => "Tensor",
 		"torch.cuda" => "cuda",
 		"torch.backends" => "others",
 		"torch.distributed" => "distributed",
@@ -122,7 +125,9 @@ function get_git_doc($api) {
 
 	$path2 = "";
 	$list1 = explode(".", $api);
-	if (count($list1) == 2) {
+    if (!empty($map1[$api])) {
+		$path2 = $path1 . $map1[$api] . "/" . $api . ".md";
+    } elseif (count($list1) == 2) {
 		$path2 = $path1 . "ops/" . $api . ".md";
 	} else {
 		$found = false;

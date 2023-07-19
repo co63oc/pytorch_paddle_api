@@ -61,3 +61,5 @@ foreach ($pytorch_data as $k => $v) {
 	}
 	echo sprintf("| [%03d %s](%s) | %s | %s | %s |\n", $v[0], $v[1], $v['url'], $str2, $has_doc, $has_test);
 }
+
+echo get_git_doc("torch.ShortTensor");
