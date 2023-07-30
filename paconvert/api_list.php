@@ -33,6 +33,9 @@ foreach ($list1 as $v) {
 echo "| pytorch | paddle | 有文档 | 有测试 |\n";
 echo "| - | - | - | - |\n";
 
+$out_str1 = "";
+$out_str2 = "";
+$count1 = 0;
 foreach ($pytorch_data as $k => $v) {
 	if (in_id_list($k)) {
 		continue;
@@ -57,9 +60,16 @@ foreach ($pytorch_data as $k => $v) {
     $has_test = "";
 	if (file_exists($test_file)) {
 		$has_test = "in test";
-        continue;
+		if (!empty($has_doc)) {
+			continue;
+		}
 	}
-	echo sprintf("| [%03d %s](%s) | %s | %s | %s |\n", $v[0], $v[1], $v['url'], $str2, $has_doc, $has_test);
+	$out_str1 .= sprintf("| [%03d %s](%s) | %s | %s  | %s |\n"
+        , $v[0], $v[1], $v['url'], $str2, $has_doc, $has_test);
+	$out_str2 .= sprintf("| %03d %s |  |  |  |\n", $v[0], $v[1]);
+    $count1 ++;
 }
+echo $out_str1;
+echo $out_str2;
 
-echo get_git_doc("torch.ShortTensor");
+echo "total_count: " . $count1 . "\n";

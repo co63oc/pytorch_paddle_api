@@ -2,14 +2,22 @@
 define("ROOT", dirname(__FILE__));
 define("PADDLE_DOC", '/data/docs/');
 
-function get_pytorch_url($api) {
+function get_pytorch_format1() {
+	$format1 = "https://pytorch.org/docs/stable/generated/{api}.html#{api}";
+    return $format1;
+}
+
+function get_pytorch_map() {
 	$format1 = "https://pytorch.org/docs/stable/generated/{api}.html#{api}";
 	$url_map1 = [
 		"torch.nn.functional" => "https://pytorch.org/docs/stable/generated/{api}.html#{api}",
+		"torch.Tensor.mT" => "https://pytorch.org/docs/stable/tensors.html?#torch.Tensor.mT",
+		"torch.Tensor.mH" => "https://pytorch.org/docs/stable/tensors.html?#torch.Tensor.mH",
 		"torch.Tensor" => "https://pytorch.org/docs/stable/generated/{api}.html#{api}",
 		"torch.cuda.amp" => "https://pytorch.org/docs/stable/amp.html#{api}",
 		"torch.cuda" => "https://pytorch.org/docs/stable/generated/{api}.html#{api}",
 		"torch.backends" => "https://pytorch.org/docs/stable/backends.html#{api}",
+		"torch.distributed.rpc" => "https://pytorch.org/docs/stable/rpc.html#{api}",
 		"torch.distributed" => "https://pytorch.org/docs/stable/distributed.html#{api}",
 		"torch.distributions" => "https://pytorch.org/docs/stable/distributions.html#{api}",
 		"torch.fft" => $format1,
@@ -31,6 +39,9 @@ function get_pytorch_url($api) {
 		"torch.utils.tensorboard" => "https://pytorch.org/docs/stable/tensorboard.html#{api}",
 		"torch.nn.utils" => $format1,
 		"torch.nn." => $format1,
+        "torch.autograd.function.Function." => $format1,
+        "torch.autograd.function.FunctionCtx" => $format1,
+        "torch.autograd.function.Function" => "https://pytorch.org/docs/stable/autograd.html#{api}",
 		"torch.autograd." => $format1,
 		"torch.hub." => "https://pytorch.org/docs/stable/hub.html#{api}",
 		"torch.jit." => $format1,
@@ -38,6 +49,13 @@ function get_pytorch_url($api) {
 		"torch.onnx." => "https://pytorch.org/docs/stable/onnx.html#{api}",
 		];
 
+    return $url_map1;
+}
+
+function get_pytorch_url($api) {
+
+    $url_map1 = get_pytorch_map();
+    $format1 = get_pytorch_format1();
 	$url2 = "";
 	$list1 = explode(".", $api);
 	if (count($list1) == 2) {
@@ -150,10 +168,15 @@ function in_id_list($i) {
 		[48,85],
 		[94,96],
 		[98,111],
-		[122,125],
+		[121,125],
+		[129,132],
+		[134,140],
+		[147,153],
 		[185,192],
 		[198,200],
 		[209,214],
+		[234,234],
+		[236,237],
 		[240,242]
 	];
 

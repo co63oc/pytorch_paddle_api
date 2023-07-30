@@ -375,7 +375,7 @@
 375	torch.distributions.transforms.CumulativeDistributionTransform	
 376	torch.distributions.transforms.SoftplusTransform	
 377	torch.linalg.lu	paddle.linalg.lu
-378	torch.linalg.vander	
+378	torch.linalg.vander	paddle.vander
 379	torch.nn.init.trunc_normal_	
 380	torch.onnx.enable_log	
 381	torch.onnx.disable_log	
@@ -403,6 +403,6 @@
 403	torch.cuda.HalfTensor	
 404	torch.ShortTensor	
 405	torch.cuda.ShortTensor	
-406	torch.cuda.ByteTensor	
+406	torch.ByteTensor	
 407	torch.DoubleTensor	
 408	torch.cuda.DoubleTensor	

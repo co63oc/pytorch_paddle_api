@@ -1,7 +1,7 @@
 <?php
 include_once dirname(__FILE__) . "/../common.php";
-define("NEW_DOC_DIR", 'lstsq/');
-define("EXIST", 'exist_lstsq.md');
+define("NEW_DOC_DIR", '255/');
+define("EXIST", 'exist_378.md');
 
 global $pytorch_data;
 global $paddle_data;
@@ -45,39 +45,9 @@ foreach ($api_list as $api) {
 		"torch.profiler." => "others",
 		"torch.onnx." => "others",
 		];
-    $format1 = "https://pytorch.org/docs/1.13/generated/{api}.html#{api}";
-	$url_map1 = [
-		"torch.nn.functional" => "https://pytorch.org/docs/1.13/generated/{api}.html#{api}",
-		"torch.Tensor" => "https://pytorch.org/docs/1.13/generated/{api}.html#{api}",
-		"torch.cuda.amp" => "https://pytorch.org/docs/1.13/amp.html#{api}",
-		"torch.cuda" => "https://pytorch.org/docs/1.13/generated/{api}.html#{api}",
-		"torch.backends" => "https://pytorch.org/docs/1.13/backends.html#{api}",
-		"torch.distributed" => "https://pytorch.org/docs/1.13/distributed.html#{api}",
-		"torch.distributions" => "https://pytorch.org/docs/1.13/distributions.html#{api}",
-		"torch.fft" => $format1,
-		"torch.linalg" => $format1,
-		"torch.nn.init" => "https://pytorch.org/docs/1.13/nn.init.html#{api}",
-		"torch.random" => "https://pytorch.org/docs/1.13/random.html#{api}",
-		"torch.special" => "https://pytorch.org/docs/1.13/special.html#{api}",
-		"torch.optim" => $format1,
-		"torch.sparse" => $format1,
-		"torch.utils.benchmark" => "https://pytorch.org/docs/1.13/benchmark_utils.html#{api}",
-		"torch.utils.bottleneck" => "https://pytorch.org/docs/1.13/bottleneck.html#{api}",
-		"torch.utils.checkpoint" => "https://pytorch.org/docs/1.13/checkpoint.html#{api}",
-		"torch.utils.cpp_extension" => "https://pytorch.org/docs/1.13/cpp_extension.html#{api}",
-		"torch.utils.data" => "https://pytorch.org/docs/1.13/data.html#{api}",
-		"torch.utils.dlpack" => "https://pytorch.org/docs/1.13/dlpack.html#{api}",
-		"torch.utils.mobile_optimizer" => "https://pytorch.org/docs/1.13/mobile_optimizer.html#{api}",
-		"torch.utils.model_zoo" => "https://pytorch.org/docs/1.13/model_zoo.html#{api}",
-		"torch.utils.tensorboard" => "https://pytorch.org/docs/1.13/tensorboard.html#{api}",
-		"torch.nn.utils" => $format1,
-		"torch.nn." => $format1,
-		"torch.autograd." => $format1,
-		"torch.hub." => "https://pytorch.org/docs/1.13/hub.html#{api}",
-		"torch.jit." => $format1,
-		"torch.profiler." => "https://pytorch.org/docs/1.13/profiler.html#{api}",
-		"torch.onnx." => "https://pytorch.org/docs/1.13/onnx.html#{api}",
-		];
+
+    $url_map1 = get_pytorch_map();
+    $format1 = get_pytorch_format1();
 
 	$list1 = explode(".", $api);
 	if (count($list1) == 2) {
@@ -253,7 +223,15 @@ $api_list = [
 //141, 142
 //258
 //87, 92, 93
-285
+//285
+//378
+//165, 166,167,168,169,170,171,172,173,174,175, 176,177,178,179,180,181,182,183,184
+//221,222,223,224,225,226
+//154,156,157
+//253,261,279
+//338
+//302
+255
 ];
 show_group(0, $api_list);
 
