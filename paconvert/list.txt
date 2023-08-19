@@ -163,23 +163,23 @@
 163	torch.distributed.reduce_scatter_multigpu	
 164	torch.distributions.distribution.Distribution	paddle.distribution.Distribution
 165	torch.distributions.exp_family.ExponentialFamily	paddle.distribution.ExponentialFamily
-166	torch.distributions.bernoulli.Bernoulli	
-167	torch.distributions.binomial.Binomial	
-168	torch.distributions.categorical.Categorical	paddle.distribution.Categorical
-169	torch.distributions.cauchy.Cauchy	paddle.distribution.Cauchy
-170	torch.distributions.continuous_bernoulli.ContinuousBernoulli	
-171	torch.distributions.dirichlet.Dirichlet	paddle.distribution.Dirichlet
-172	torch.distributions.exponential.Exponential	
-173	torch.distributions.geometric.Geometric	
-174	torch.distributions.gumbel.Gumbel	
-175	torch.distributions.independent.Independent	paddle.distribution.Independent
-176	torch.distributions.laplace.Laplace	
-177	torch.distributions.log_normal.LogNormal	
-178	torch.distributions.multinomial.Multinomial	paddle.distribution.Multinomial
-179	torch.distributions.normal.Normal	paddle.distribution.Normal
-180	torch.distributions.one_hot_categorical.OneHotCategorical	
-181	torch.distributions.transformed_distribution.TransformedDistribution	
-182	torch.distributions.uniform.Uniform	paddle.distribution.Uniform
+166	torch.distributions.Bernoulli	
+167	torch.distributions.Binomial	
+168	torch.distributions.Categorical	paddle.distribution.Categorical
+169	torch.distributions.Cauchy	paddle.distribution.Cauchy
+170	torch.distributions.ContinuousBernoulli	
+171	torch.distributions.Dirichlet	paddle.distribution.Dirichlet
+172	torch.distributions.Exponential	
+173	torch.distributions.Geometric	
+174	torch.distributions.Gumbel	
+175	torch.distributions.Independent	paddle.distribution.Independent
+176	torch.distributions.Laplace	
+177	torch.distributions.LogNormal	
+178	torch.distributions.Multinomial	paddle.distribution.Multinomial
+179	torch.distributions.Normal	paddle.distribution.Normal
+180	torch.distributions.OneHotCategorical	
+181	torch.distributions.TransformedDistribution	
+182	torch.distributions.Uniform	paddle.distribution.Uniform
 183	torch.distributions.transforms.Transform	
 184	torch.distributions.transforms.ComposeTransform	paddle.distribution.ChainTransform
 185	torch.distributions.transforms.IndependentTransform	paddle.distribution.IndependentTransform
