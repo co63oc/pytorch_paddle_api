@@ -1,6 +1,6 @@
 <?php
 define("ROOT", dirname(__FILE__));
-define("PADDLE_DOC", '/data/docs/');
+define("PADDLE_DOC", ROOT. '/../docs/');
 
 function get_pytorch_format1() {
 	$format1 = "https://pytorch.org/docs/stable/generated/{api}.html#{api}";
@@ -164,7 +164,7 @@ function in_id_list($i) {
 	$ignore_list = [
 		[1,29],
 		[35,38],
-		[48,85],
+		[47,85],
 		[88,91],
 		[94,96],
 		[101,111],
@@ -172,15 +172,20 @@ function in_id_list($i) {
 		[129,132],
 		[134,140],
 		[147,153],
-		[165,184],
+		[164,184],
 		[185,192],
+		[193,195],
 		[198,200],
 		[209,214],
 		[234,234],
 		[236,237],
 		[240,242],
+		[243,301],
 		[366,366],
+		[373,373],
+		[375,376],
 		[383,383],
+		[406,406],
 	];
 
 

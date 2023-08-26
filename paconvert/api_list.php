@@ -56,7 +56,7 @@ foreach ($pytorch_data as $k => $v) {
     $api = $v[1];
     $test_name = str_replace("torch.", "", $api);
     $test_name = str_replace(".", "_", $test_name);
-    $test_file = sprintf("/data/PaConvert/tests/test_%s.py", $test_name);
+    $test_file = sprintf(ROOT . "/../PaConvert/tests/test_%s.py", $test_name);
     $has_test = "";
 	if (file_exists($test_file)) {
 		$has_test = "in test";
