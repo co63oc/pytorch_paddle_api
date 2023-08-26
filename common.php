@@ -102,8 +102,8 @@ function get_paddle_url($paddle_api, $index = "") {
 		$rst_file2_cn = str_replace("{api_dir}", $api_dir, $rst_file_cn);
 		if (!file_exists(PADDLE_DOC . $rst_file2) && !file_exists(PADDLE_DOC . $rst_file2_cn)) {
 			$url2 = "";
-			echo $index . "  ";
-			echo $paddle_api . " not exists\n";
+			// echo $index . "  ";
+			// echo $paddle_api . " not exists\n";
 			$rst_file2 = "";
 		} else {
 			$rst_file2 = $rst_file2_cn;
