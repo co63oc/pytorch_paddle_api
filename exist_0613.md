@@ -1,9 +1,0 @@
-torch.nn.ConvTranspose2d
-torch.nn.ConvTranspose3d
-torch.nn.MaxPool1d
-torch.nn.MaxPool2d
-torch.nn.MaxPool3d
-torch.nn.ELU
-torch.nn.Hardsigmoid
-torch.nn.LeakyReLU
-torch.random.get_rng_state

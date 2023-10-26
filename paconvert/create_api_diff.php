@@ -1,7 +1,7 @@
 <?php
 include_once dirname(__FILE__) . "/../common.php";
-define("NEW_DOC_DIR", '255/');
-define("EXIST", 'exist_378.md');
+define("NEW_DOC_DIR", '1026/');
+define("EXIST", 'exist_1026.md');
 
 global $pytorch_data;
 global $paddle_data;
@@ -84,6 +84,7 @@ foreach ($api_list as $api) {
 
 $c_diff = file_get_contents(ROOT . '/paconvert/list.txt');
 $api_paddle_list = explode("\n", $c_diff);
+print($api_paddle_list);
 $i = 0;
 // finished
 $ignore_list = [
@@ -232,7 +233,7 @@ $api_list = [
 //338
 //302
 //255
-384,385,386,387
+//384,385,386,387
 ];
 show_group(0, $api_list);
 
