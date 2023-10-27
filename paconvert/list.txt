@@ -31,13 +31,13 @@
 31	torch.finfo	paddle.finfo	1
 32	torch.nn.CTCLoss	paddle.nn.CTCLoss	2
 33	torch.nn.functional.ctc_loss	paddle.nn.functional.ctc_loss	2
-34	torch.nn.PoissonNLLLoss paddle.nn.PoissonNLLLoss		4
-35	torch.nn.GaussianNLLLoss    paddle.nn.GaussianNLLLoss		4
-36	torch.nn.MultiLabelMarginLoss   paddle.nn.MultiLabelMarginLoss		4
+34	torch.nn.PoissonNLLLoss	paddle.nn.PoissonNLLLoss		4
+35	torch.nn.GaussianNLLLoss	paddle.nn.GaussianNLLLoss		4
+36	torch.nn.MultiLabelMarginLoss	paddle.nn.MultiLabelMarginLoss		4
 37	torch.nn.functional.multilabel_margin_loss	paddle.nn.functional.multi_label_soft_margin_loss	6
 38	torch.nn.SmoothL1Loss	paddle.nn.SmoothL1Loss	2
 39	torch.nn.MultiLabelSoftMarginLoss	paddle.nn.MultiLabelSoftMarginLoss	1
-40	torch.nn.MultiMarginLoss    paddle.nn.MultiMarginLoss		2
+40	torch.nn.MultiMarginLoss	paddle.nn.MultiMarginLoss		2
 41	torch.nn.functional.triplet_margin_loss	"paddle.nn.functional.triplet_margin_loss	"	1
 42	torch.linalg.eigh	paddle.linalg.eigh	2
 43	torch.linalg.eigvalsh	paddle.linalg.eigvalsh	2

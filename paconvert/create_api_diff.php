@@ -1,7 +1,7 @@
 <?php
-include_once dirname(__FILE__) . "/../common.php";
-define("NEW_DOC_DIR", '1026/');
-define("EXIST", 'exist_1026.md');
+include_once dirname(__FILE__) . "/../develop/common.php";
+define("NEW_DOC_DIR", 'tmp/1026/');
+define("EXIST", 'tmp/exist_1026.md');
 
 global $pytorch_data;
 global $paddle_data;
@@ -166,7 +166,7 @@ function show_group($group_id, $api_list = []) {
 	global $pytorch_data;
 	global $paddle_data;
 	global $exist_list;
-	$api_tpl = file_get_contents(ROOT . "/api.tpl");
+	$api_tpl = file_get_contents(ROOT . "/develop/api.tpl");
 
 	$start = 1;
 	$end = count($pytorch_data);
@@ -214,26 +214,7 @@ function show_group($group_id, $api_list = []) {
 
 $api_list = [
 //92, 93, 
-//114,115,116,117,118,119,120,
-//147,148,149,150, 152, 155, 158,
-//216, 217, 228, 229, 258
-//388,389,390
-//299, 305, 316, 317, 319
-//193,194,195
-//263, 264, 274
-//141, 142
-//258
-//87, 92, 93
-//285
-//378
-//165, 166,167,168,169,170,171,172,173,174,175, 176,177,178,179,180,181,182,183,184
-//221,222,223,224,225,226
-//154,156,157
-//253,261,279
-//338
-//302
-//255
-//384,385,386,387
+21
 ];
 show_group(0, $api_list);
 

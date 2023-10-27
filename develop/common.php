@@ -1,13 +1,15 @@
 <?php
-define("ROOT", dirname(__FILE__));
-define("PADDLE_DOC", ROOT. '/../docs/');
+define("ROOT", dirname(__FILE__) . "/../");
+define("PADDLE_DOC", ROOT . '/../docs/');
 
-function get_pytorch_format1() {
+function get_pytorch_format1()
+{
 	$format1 = "https://pytorch.org/docs/stable/generated/{api}.html#{api}";
-    return $format1;
+	return $format1;
 }
 
-function get_pytorch_map() {
+function get_pytorch_map()
+{
 	$format1 = "https://pytorch.org/docs/stable/generated/{api}.html#{api}";
 	$url_map1 = [
 		"torch.nn.functional" => "https://pytorch.org/docs/stable/generated/{api}.html#{api}",
@@ -39,23 +41,24 @@ function get_pytorch_map() {
 		"torch.utils.tensorboard" => "https://pytorch.org/docs/stable/tensorboard.html#{api}",
 		"torch.nn.utils" => $format1,
 		"torch.nn." => $format1,
-        "torch.autograd.function.Function." => $format1,
-        "torch.autograd.function.FunctionCtx" => $format1,
-        "torch.autograd.function.Function" => "https://pytorch.org/docs/stable/autograd.html#{api}",
+		"torch.autograd.function.Function." => $format1,
+		"torch.autograd.function.FunctionCtx" => $format1,
+		"torch.autograd.function.Function" => "https://pytorch.org/docs/stable/autograd.html#{api}",
 		"torch.autograd." => $format1,
 		"torch.hub." => "https://pytorch.org/docs/stable/hub.html#{api}",
 		"torch.jit." => $format1,
 		"torch.profiler." => "https://pytorch.org/docs/stable/profiler.html#{api}",
 		"torch.onnx." => "https://pytorch.org/docs/stable/onnx.html#{api}",
-		];
+	];
 
-    return $url_map1;
+	return $url_map1;
 }
 
-function get_pytorch_url($api) {
+function get_pytorch_url($api)
+{
 
-    $url_map1 = get_pytorch_map();
-    $format1 = get_pytorch_format1();
+	$url_map1 = get_pytorch_map();
+	$format1 = get_pytorch_format1();
 	$url2 = "";
 	$list1 = explode(".", $api);
 	if (count($list1) == 2) {
@@ -73,11 +76,12 @@ function get_pytorch_url($api) {
 	return $url2;
 }
 
-function get_paddle_url($paddle_api, $index = "") {
+function get_paddle_url($paddle_api, $index = "")
+{
 	$url2 = "";
 	$rst_file2 = "";
-    $paddle_api = str_replace("(x)", "", $paddle_api);
-    $paddle_api = preg_replace("|\(.*$|ims", "", $paddle_api);
+	$paddle_api = str_replace("(x)", "", $paddle_api);
+	$paddle_api = preg_replace("|\(.*$|ims", "", $paddle_api);
 	$api_dir = str_replace(".", "/", $paddle_api);
 	if (strpos($paddle_api, "paddle.Tensor") === 0) {
 		$format_tensor = "https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/paddle/Tensor_cn.html#{api_name}";
@@ -112,7 +116,8 @@ function get_paddle_url($paddle_api, $index = "") {
 	return [$url2, $rst_file2];
 }
 
-function get_git_doc($api) {
+function get_git_doc($api)
+{
 	$path1 = "docs/guides/model_convert/convert_from_pytorch/api_difference/";
 	$map1 = [
 		"torch.nn.functional" => "functional",
@@ -139,13 +144,13 @@ function get_git_doc($api) {
 		"torch.jit." => "others",
 		"torch.profiler." => "others",
 		"torch.onnx." => "others",
-		];
+	];
 
 	$path2 = "";
 	$list1 = explode(".", $api);
-    if (!empty($map1[$api])) {
+	if (!empty($map1[$api])) {
 		$path2 = $path1 . $map1[$api] . "/" . $api . ".md";
-    } elseif (count($list1) == 2) {
+	} elseif (count($list1) == 2) {
 		$path2 = $path1 . "ops/" . $api . ".md";
 	} else {
 		$found = false;
@@ -160,28 +165,28 @@ function get_git_doc($api) {
 	return $path2;
 }
 
-function in_id_list($i) {
+function in_id_list($i)
+{
 	$ignore_list = [
-		[1,20],
-		[42,200],
+		[1, 20],
+		[42, 200],
 	];
 
-
-		$in_ignore = false;
-		foreach ($ignore_list as $ignore) {
-			if (is_array($ignore)) {
-				if ($i >= $ignore[0] && $i <= $ignore[1]) {
-					$in_ignore = true;
-					break;
-				}
-			} else {
-				if ($i == $ignore) {
-					$in_ignore = true;
-					break;
-				}
+	$in_ignore = false;
+	foreach ($ignore_list as $ignore) {
+		if (is_array($ignore)) {
+			if ($i >= $ignore[0] && $i <= $ignore[1]) {
+				$in_ignore = true;
+				break;
+			}
+		} else {
+			if ($i == $ignore) {
+				$in_ignore = true;
+				break;
 			}
 		}
+	}
 
-		return $in_ignore;
+	return $in_ignore;
 }
 

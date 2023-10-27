@@ -1,5 +1,5 @@
 <?php
-include_once dirname(__FILE__) . "/../common.php";
+include_once dirname(__FILE__) . "/../develop/common.php";
 
 global $pytorch_data;
 $c = file_get_contents(ROOT . '/paconvert/list.txt');
