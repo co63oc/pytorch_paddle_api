@@ -25,7 +25,7 @@ foreach ($api_list as $api) {
 }
 
 
-$list1 = [302,306];
+$list1 = [302, 306];
 foreach ($list1 as $v) {
 	// print_r($pytorch_data[$v]);
 }
@@ -45,29 +45,37 @@ foreach ($pytorch_data as $k => $v) {
 	} else {
 		$str2 = "";
 	}
-    $c_mapping = file_get_contents(PADDLE_DOC . "docs/guides/model_convert/convert_from_pytorch/pytorch_api_mapping_cn.md");
-    $has_doc = get_git_doc($v[1]);
+	$c_mapping = file_get_contents(PADDLE_DOC . "docs/guides/model_convert/convert_from_pytorch/pytorch_api_mapping_cn.md");
+	$has_doc = get_git_doc($v[1]);
 	if (empty($has_doc) || !file_exists(PADDLE_DOC . $has_doc)) {
 		$has_doc = "";
 		if (strpos($c_mapping, "[" . $v[1] . "]") !== false) {
 			$has_doc = "in mapping";
 		}
 	}
-    $api = $v[1];
-    $test_name = str_replace("torch.", "", $api);
-    $test_name = str_replace(".", "_", $test_name);
-    $test_file = sprintf(ROOT . "/../PaConvert/tests/test_%s.py", $test_name);
-    $has_test = "";
+	$api = $v[1];
+	$test_name = str_replace("torch.", "", $api);
+	$test_name = str_replace(".", "_", $test_name);
+	$test_file = sprintf(ROOT . "/../PaConvert/tests/test_%s.py", $test_name);
+	$has_test = "";
 	if (file_exists($test_file)) {
 		$has_test = "in test";
 		if (!empty($has_doc)) {
 			continue;
 		}
 	}
-	$out_str1 .= sprintf("| [%03d %s](%s) | %s | %s  | %s |\n"
-        , $v[0], $v[1], $v['url'], $str2, $has_doc, $has_test);
+	$out_str1 .= sprintf(
+		"| [%03d %s](%s) | %s | %s  | %s |\n"
+		,
+		$v[0],
+		$v[1],
+		$v['url'],
+		$str2,
+		$has_doc,
+		$has_test
+	);
 	$out_str2 .= sprintf("| %03d %s |  |  |  |\n", $v[0], $v[1]);
-    $count1 ++;
+	$count1++;
 }
 echo $out_str1;
 echo $out_str2;

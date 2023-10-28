@@ -14,12 +14,12 @@ foreach ($api_list as $api) {
 	if (empty($api)) {
 		continue;
 	}
-    $i++;
+	$i++;
 	$list1 = explode("\t", $api);
 	if (empty($list1[1])) {
 		continue;
 	}
-    $api = $list1[1];
+	$api = $list1[1];
 
 	$path1 = "docs/guides/model_convert/convert_from_pytorch/api_difference/";
 	$map1 = [
@@ -44,15 +44,16 @@ foreach ($api_list as $api) {
 		"torch.jit." => "others",
 		"torch.profiler." => "others",
 		"torch.onnx." => "others",
-		];
+	];
 
-    $url_map1 = get_pytorch_map();
-    $format1 = get_pytorch_format1();
+	$url_map1 = get_pytorch_map();
+	$format1 = get_pytorch_format1();
 
 	$list1 = explode(".", $api);
+	$found = false;
 	if (count($list1) == 2) {
 		$path2 = $path1 . "ops/" . $api . ".md";
-        $url2 = str_replace("{api}", $api, $format1);
+		$url2 = str_replace("{api}", $api, $format1);
 	} else {
 		$found = false;
 		foreach ($map1 as $k1 => $v1) {
@@ -64,8 +65,8 @@ foreach ($api_list as $api) {
 		}
 		foreach ($url_map1 as $k1 => $v1) {
 			if (strpos($api, $k1) === 0) {
-                $url2 = str_replace("{api}", $api, $url_map1[$k1]);
-                break;
+				$url2 = str_replace("{api}", $api, $url_map1[$k1]);
+				break;
 			}
 		}
 	}
@@ -78,45 +79,41 @@ foreach ($api_list as $api) {
 	}
 	//echo $path2 . "\n";
 	//echo $url2 . "\n";
-    $pytorch_data[$i] = ["api" => $api, "url" => $url2, "new_doc" => $path2];
+	$pytorch_data[$i] = ["api" => $api, "url" => $url2, "new_doc" => $path2];
 }
-//exit();
 
 $c_diff = file_get_contents(ROOT . '/paconvert/list.txt');
 $api_paddle_list = explode("\n", $c_diff);
-print($api_paddle_list);
+// print($api_paddle_list);
 $i = 0;
 // finished
 $ignore_list = [
-/*
-[1, 29],
-[31, 49],
-54, 57, 59, 66, 67, 68, 70, 72, 79
-*/
+	[1, 20],
+	[42, 200]
 ];
 $paddle_data = [];
 foreach ($api_paddle_list as $item) {
 	if (empty($item)) {
 		continue;
 	}
-    $i++;
+	$i++;
 
-    $in_ignore = false;
+	$in_ignore = false;
 	foreach ($ignore_list as $ignore) {
 		if (is_array($ignore)) {
-			if ($i > ($ignore[0] * 10 - 10) && $i <= $ignore[1] * 10) {
+			if ($i >= $ignore[0] && $i <= $ignore[1]) {
 				$in_ignore = true;
 				break;
 			}
 		} else {
-			if ($i > ($ignore * 10 - 10) && $i <= $ignore * 10) {
+			if ($i > $ignore && $i <= $ignore * 10) {
 				$in_ignore = true;
 				break;
 			}
 		}
 	}
 	if ($in_ignore) {
-		// continue;
+		continue;
 	}
 
 	$list1 = explode("\t", $item);
@@ -126,8 +123,8 @@ foreach ($api_paddle_list as $item) {
 	$list1[2] = trim($list1[2], " \"");
 
 	$paddle_api = $list1[2];
-    $paddle_api = str_replace("(x)", "", $paddle_api);
-    $paddle_api = preg_replace("|\(.*$|ims", "", $paddle_api);
+	$paddle_api = str_replace("(x)", "", $paddle_api);
+	$paddle_api = preg_replace("|\(.*$|ims", "", $paddle_api);
 
 	$api_dir = str_replace(".", "/", $paddle_api);
 	if (strpos($paddle_api, "paddle.Tensor") === 0) {
@@ -135,34 +132,35 @@ foreach ($api_paddle_list as $item) {
 		$list_c = file_get_contents(ROOT . "/develop/Tensor_cn.html");
 
 		$api_name = str_replace("paddle.Tensor.", "", $paddle_api);
-        $api_name1 = str_replace("_", "-", $api_name);
+		$api_name1 = str_replace("_", "-", $api_name);
 		$reg = "|href=\"#([^\"]*)\">%s[_(<]|ims";
 		$reg2 = sprintf($reg, $api_name);
-        $url2 = $format_tensor;
+		$url2 = $format_tensor;
 		preg_match($reg2, $list_c, $m);
 		if (!empty($m[0])) {
 			$url2 = str_replace("{api_name}", $m[1], $format_tensor);
 		}
-        $rst_file2 = "docs/api/paddle/Tensor_cn.rst";
+		$rst_file2 = "docs/api/paddle/Tensor_cn.rst";
 	} else {
-	    $format1 = "https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/{api_dir}_cn.html";
-        $rst_file = "docs/api/{api_dir}_cn.rst";
+		$format1 = "https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/api/{api_dir}_cn.html";
+		$rst_file = "docs/api/{api_dir}_cn.rst";
 		$url2 = str_replace("{api_dir}", $api_dir, $format1);
 		$rst_file2 = str_replace("{api_dir}", $api_dir, $rst_file);
 		if (!file_exists(PADDLE_DOC . $rst_file2)) {
-            $url2 = "";
-            echo $i . "  ";
+			$url2 = "";
+			echo $i . "  ";
 			echo $paddle_api . " not exists\n";
-            $rst_file2 = "";
+			$rst_file2 = "";
 		}
 	}
-    $paddle_data[$i] = ["api" => $paddle_api, "url" => $url2, "paddle_doc" => $rst_file2];
+	$paddle_data[$i] = ["api" => $paddle_api, "url" => $url2, "paddle_doc" => $rst_file2];
 }
 // print_r($paddle_data);
 
 global $exist_list;
 $exist_list = [];
-function show_group($group_id, $api_list = []) {
+function show_group($api_list = [])
+{
 	global $pytorch_data;
 	global $paddle_data;
 	global $exist_list;
@@ -170,6 +168,8 @@ function show_group($group_id, $api_list = []) {
 
 	$start = 1;
 	$end = count($pytorch_data);
+	$start = 21;
+	$end = 41;
 	echo "\n";
 	for ($i = $start; $i <= $end; $i++) {
 		if (empty($paddle_data[$i])) {
@@ -180,20 +180,24 @@ function show_group($group_id, $api_list = []) {
 			];
 		}
 		if (!empty($api_list) && !in_array($i, $api_list)) {
-            continue;
-		} 
+			continue;
+		}
 		$replace_list = [];
-		echo sprintf("%s | %s\n  %s\n  %s\n  %s\n", 
-				$pytorch_data[$i]['api'], $paddle_data[$i]['api'], 
-				$pytorch_data[$i]['url'], $paddle_data[$i]['url'], 
-				$pytorch_data[$i]['new_doc']);
+		echo sprintf(
+			"%s | %s\n  %s\n  %s\n  %s\n",
+			$pytorch_data[$i]['api'],
+			$paddle_data[$i]['api'],
+			$pytorch_data[$i]['url'],
+			$paddle_data[$i]['url'],
+			$pytorch_data[$i]['new_doc']
+		);
 		$replace_list["label_type"] = "xxx 参数更多";
 		$replace_list["torch_api"] = $pytorch_data[$i]['api'];
 		$replace_list["torch_url"] = $pytorch_data[$i]['url'];
 		$replace_list["paddle_api"] = $paddle_data[$i]['api'];
 		$replace_list["paddle_url"] = $paddle_data[$i]['url'];
 		$replace_list["label_more"] = "其中 xxx 相比 xxx 支持更多其他参数，具体如下：";
-        $c = $api_tpl;
+		$c = $api_tpl;
 		foreach ($replace_list as $k1 => $v1) {
 			$c = str_replace("{" . $k1 . "}", $v1, $c);
 		}
@@ -206,17 +210,17 @@ function show_group($group_id, $api_list = []) {
 			}
 			file_put_contents($new_file, $c);
 		} else {
-            $exist_list[] = $pytorch_data[$i]['api'];
+			$exist_list[] = $pytorch_data[$i]['api'];
 			// echo $new_doc . " exists\n";
 		}
 	}
 }
 
 $api_list = [
-//92, 93, 
-21
+	//92, 93, 
+	// 21
 ];
-show_group(0, $api_list);
+show_group($api_list);
 
 // index.md
 $str = <<<EOF
@@ -225,12 +229,13 @@ $str = <<<EOF
 
 EOF;
 foreach ($pytorch_data as $i => $v) {
-	$str .= sprintf("| [%s](%s) | [%s]%s |\n",
-			$pytorch_data[$i]['api'], 
-			$pytorch_data[$i]['url'], 
-			$paddle_data[$i]['api'] ?? "", 
-			!empty($paddle_data[$i]['url']) ? "(" . $paddle_data[$i]['url'] . ")" : ""
-			);
+	$str .= sprintf(
+		"| [%s](%s) | [%s]%s |\n",
+		$pytorch_data[$i]['api'],
+		$pytorch_data[$i]['url'],
+		$paddle_data[$i]['api'] ?? "",
+		!empty($paddle_data[$i]['url']) ? "(" . $paddle_data[$i]['url'] . ")" : ""
+	);
 }
 
 $str = implode("\n", $exist_list);
