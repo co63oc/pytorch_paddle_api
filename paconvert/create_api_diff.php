@@ -1,7 +1,7 @@
 <?php
 include_once dirname(__FILE__) . "/../develop/common.php";
-define("NEW_DOC_DIR", 'tmp/1026/');
-define("EXIST", 'tmp/exist_1026.md');
+define("NEW_DOC_DIR", 'tmp/1031/');
+define("EXIST", 'tmp/exist_1031.md');
 
 global $pytorch_data;
 global $paddle_data;
@@ -88,9 +88,11 @@ $api_paddle_list = explode("\n", $c_diff);
 $i = 0;
 // finished
 $ignore_list = [
-	[1, 20],
-	[42, 200]
 ];
+$include_list = [
+	[84, 102],
+];
+
 $paddle_data = [];
 foreach ($api_paddle_list as $item) {
 	if (empty($item)) {
@@ -114,6 +116,18 @@ foreach ($api_paddle_list as $item) {
 	}
 	if ($in_ignore) {
 		continue;
+	}
+	if ($include_list) {
+		$in_ignore = true;
+		foreach ($include_list as $include) {
+			if ($include[0] <= $i && $i <= $include[1]) {
+				$in_ignore = false;
+				break;
+			}
+		}
+		if ($in_ignore) {
+			continue;
+		}
 	}
 
 	$list1 = explode("\t", $item);
@@ -168,8 +182,8 @@ function show_group($api_list = [])
 
 	$start = 1;
 	$end = count($pytorch_data);
-	$start = 21;
-	$end = 41;
+	$start = 84;
+	$end = 102;
 	echo "\n";
 	for ($i = $start; $i <= $end; $i++) {
 		if (empty($paddle_data[$i])) {
