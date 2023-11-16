@@ -44,16 +44,16 @@
 44	torch.linalg.pinv	paddle.linalg.pinv	2
 45	torch.linalg.svd	paddle.linalg.svd	1
 46	torch.linalg.solve	paddle.linalg.solve	2
-47	torch.Tensor.eig	paddle.linalg.eig	2
+47	torch.linalg.eig	paddle.linalg.eig	2
 48	torch.Tensor.float_power		4
 49	torch.Tensor.float_power_		4
 50	torch.Tensor.lstsq	paddle.Tensor.lstsq	1
-51	torch.pca_lowrank		1~6
+51	torch.pca_lowrank	paddle.linalg.pca_lowrank	1~6
 52	torch.symeig	paddle.linalg.eigh	2
 53	torch.Tensor.symeig	paddle.linalg.eigh	2
 54	torch.linalg.inv_ex	paddle.linalg.inv	1~6
-55	torch.linalg.matrix_norm		1~6
-56	torch.linalg.vector_norm	torch.norm	1~6
+55	torch.linalg.matrix_norm	paddle.linalg.norm		1~6
+56	torch.linalg.vector_norm	paddle.linalg.norm	1~6
 57	torch.linalg.cholesky_ex	paddle.linalg.cholesky	1~6
 58	torch.Tensor.cholesky_solve	paddle.Tensor.cholesky_solve	1
 59	torch.Tensor.triangular_solve	paddle.Tensor.triangular_solve	2
