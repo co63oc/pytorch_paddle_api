@@ -90,7 +90,7 @@ $i = 0;
 $ignore_list = [
 ];
 $include_list = [
-	[42, 61],
+	[103, 122],
 ];
 
 $paddle_data = [];

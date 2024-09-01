@@ -100,25 +100,44 @@
 100	torch.distributed.ReduceOp.MIN	paddle.distributed.ReduceOp.MIN	1
 101	torch.distributed.ReduceOp.PRODUCT	paddle.distributed.ReduceOp.PROD	1
 102	torch.nn.DataParallel	paddle.DataParallel	3
-103	torch.bartlett_window		6
-104	torch.blackman_window		6
-105	torch.hamming_window		6
-106	torch.hann_window		6
-107	torch.kaiser_window		6
-108	torch.nn.utils.prune.BasePruningMethod		6
-109	torch.nn.utils.prune.PruningContainer		6
-110	torch.nn.utils.prune.Identity		6
-111	torch.nn.utils.prune.RandomUnstructured		6
-112	torch.nn.utils.prune.L1Unstructured		6
-113	torch.nn.utils.prune.RandomStructured		6
-114	torch.nn.utils.prune.LnStructured		6
-115	torch.nn.utils.prune.CustomFromMask		6
-116	torch.nn.utils.prune.identity		6
-117	torch.nn.utils.prune.random_unstructured		6
-118	torch.nn.utils.prune.l1_unstructured		6
-119	torch.nn.utils.prune.random_structured		6
-120	torch.nn.utils.prune.ln_structured		6
-121	torch.nn.utils.prune.global_unstructured		6
-122	torch.nn.utils.prune.custom_from_mask		6
-123	torch.nn.utils.prune.remove		6
-124	torch.nn.utils.prune.is_pruned		6
+103	torch.histogramdd	
+104	torch.index_fill
+105	torch.masked_fill
+106	torch.masked_select
+107	torch.hypot
+108	torch.special.multigammaln	
+109	torch.combinations	
+110	torch.Tensor.to	paddle.Tensor.to
+111	torch.nn.Module.type	paddle.nn.Layer.astype
+112	torch.optim.lr_scheduler.LinearLR	
+113	torch.optim.lr_scheduler.CosineAnnealingWarmRestarts	
+114	torch.utils.data.ConcatDataset	
+115	torch.utils.data.SubsetRandomSampler	
+116	torch.select_scatter
+117	torch.diagonal_scatter
+118	torch.signbit
+119	torch.nn.functional.pdist	
+120	torch.nn.AdaptiveLogSoftmaxWithLoss	
+121	torch.atleast_1d
+122	torch.linalg.householder_product	
+
+103	torch.histogramdd	
+104	torch.index_fill / torch.Tensor.index_fill / torch.Tensor.index_fill_	
+105	torch.masked_fill / torch.Tensor.masked_fill / torch.Tensor.masked_fill_	
+106	torch.masked_select / torch.Tensor.masked_select	
+107	torch.hypot / torch.Tensor.hypot / torch.Tensor.hypot_	
+108	torch.special.multigammaln	
+109	torch.combinations	
+110	torch.Tensor.to	paddle.Tensor.to
+111	torch.nn.Module.type	paddle.nn.Layer.astype
+112	torch.optim.lr_scheduler.LinearLR	
+113	torch.optim.lr_scheduler.CosineAnnealingWarmRestarts	
+114	torch.utils.data.ConcatDataset	
+115	torch.utils.data.SubsetRandomSampler	
+116	torch.select_scatter / torch.Tensor.select_scatter	
+117	torch.diagonal_scatter / torch.Tensor.diagonal_scatter	
+118	torch.signbit / torch.Tensor.signbit	
+119	torch.nn.functional.pdist	
+120	torch.nn.AdaptiveLogSoftmaxWithLoss	
+121	torch.atleast_1d / atleast_2d / atleast_3d	
+122	torch.linalg.householder_product	
